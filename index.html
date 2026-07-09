@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Döneria Dornbusch · Döner in Frankfurt am Main</title>
+<meta name="description" content="Döneria Dornbusch: frisch gegrillter Döner, Dürüm, Falafel und hausgemachte Soßen an der Eschersheimer Landstraße 322, Frankfurt. Halal. Täglich geöffnet.">
+<meta property="og:title" content="Döneria Dornbusch · Frankfurt">
+<meta property="og:description" content="Frischer Döner, Dürüm und Falafel im Dornbusch. 4,7 Sterne. Halal.">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Döneria Dornbusch",
+  "servesCuisine": ["Türkisch", "Döner", "Kebab"],
+  "telephone": "+49 69 96865511",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Eschersheimer Landstraße 322",
+    "postalCode": "60320",
+    "addressLocality": "Frankfurt am Main",
+    "addressCountry": "DE"
+  },
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "226"},
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "22:30"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "22:00"}
+  ],
+  "priceRange": "€"
+}
+</script>
+<style>
+:root{
+  --bg:#131110;
+  --bg-2:#1b1816;
+  --bg-3:#242019;
+  --line:rgba(255,244,230,.09);
+  --text:#f4ede4;
+  --text-2:#b3a99c;
+  --accent:#e8622c;
+  --accent-soft:rgba(232,98,44,.14);
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:"General Sans",system-ui,sans-serif;
+  font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{font-family:"Cabinet Grotesk",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.05}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;height:68px;
+  display:flex;align-items:center;
+  background:rgba(19,17,16,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1240px;margin:0 auto;padding:0 24px}
+.logo{font-family:"Cabinet Grotesk";font-weight:800;font-size:1.25rem}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:32px;font-size:.92rem;color:var(--text-2)}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{
+  background:var(--accent);color:#180c06;font-weight:600;font-size:.92rem;
+  padding:10px 20px;border-radius:999px;transition:transform .2s;
+}
+.nav-cta:hover{transform:translateY(-1px)}
+.nav-cta:active{transform:scale(.98)}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;cursor:pointer;color:var(--text);font-size:1.2rem;line-height:1}
+.mobile-menu{
+  display:none;position:fixed;top:68px;left:0;right:0;z-index:49;
+  background:rgba(19,17,16,.97);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);padding:8px 24px 20px;
+  padding-left:max(24px, env(safe-area-inset-left));
+  padding-right:max(24px, env(safe-area-inset-right));
+}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:16px 0;font-size:1.1rem;font-weight:500;border-bottom:1px solid var(--line)}
+.mobile-menu a:last-child{border-bottom:none}
+@media(max-width:860px){
+  .nav-links{display:none}
+  .burger{display:flex;align-items:center;justify-content:center}
+  .nav-cta{display:none}
+}
+
+/* HERO */
+.hero{min-height:100dvh;display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:110px 5vw 60px calc(max((100vw - 1240px)/2, 24px))}
+.hero h1{font-size:clamp(2.6rem,5.2vw,4.6rem);font-weight:800;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--accent);line-height:1.1;padding-bottom:4px;display:inline-block}
+.hero p{color:var(--text-2);max-width:42ch;margin-bottom:32px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{
+  background:var(--accent);color:#180c06;font-weight:600;
+  padding:14px 28px;border-radius:999px;transition:transform .2s;white-space:nowrap;
+}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-primary:active{transform:scale(.98)}
+.btn-ghost{
+  border:1px solid var(--line);color:var(--text);padding:14px 28px;border-radius:999px;white-space:nowrap;
+  transition:border-color .2s,background .2s;
+}
+.btn-ghost:hover{border-color:var(--accent);background:var(--accent-soft)}
+.hero-img{position:relative;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,transparent 30%)}
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-copy{padding:110px 24px 40px}
+  .hero-img{height:52vw;min-height:280px}
+  .hero-img::after{background:linear-gradient(180deg,var(--bg) 0%,transparent 30%)}
+}
+
+/* STATUS STRIP */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+.strip-inner{display:grid;grid-template-columns:repeat(3,1fr);max-width:1240px;margin:0 auto}
+.strip-cell{padding:26px 24px;border-left:1px solid var(--line)}
+.strip-cell:first-child{border-left:none}
+.strip-cell b{display:block;font-size:1.05rem;font-weight:600;margin-bottom:2px}
+.strip-cell span{color:var(--text-2);font-size:.9rem}
+.open-now{color:var(--accent);font-weight:600}
+@media(max-width:700px){
+  .strip-inner{grid-template-columns:1fr}
+  .strip-cell{border-left:none;border-top:1px solid var(--line)}
+  .strip-cell:first-child{border-top:none}
+}
+
+/* SECTIONS */
+section{padding:96px 0}
+.sec-head{margin-bottom:48px}
+.sec-head h2{font-size:clamp(2rem,3.6vw,3rem);font-weight:800}
+.sec-head p{color:var(--text-2);max-width:52ch;margin-top:12px}
+
+/* MENU */
+.menu-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.menu-tab{
+  border:1px solid var(--line);background:none;color:var(--text-2);cursor:pointer;
+  padding:10px 22px;border-radius:999px;font-size:.95rem;font-family:inherit;
+  transition:all .2s;
+}
+.menu-tab:hover{color:var(--text)}
+.menu-tab.active{background:var(--accent);border-color:var(--accent);color:#180c06;font-weight:600}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 48px}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0}
+.menu-item + .menu-item{border-top:1px solid var(--line)}
+.menu-grid > .menu-item:nth-child(2){border-top:none}
+.mi-name{font-weight:600}
+.mi-desc{color:var(--text-2);font-size:.88rem;margin-top:2px}
+.mi-price{font-family:"Cabinet Grotesk";font-weight:700;color:var(--accent);font-size:1.1rem;white-space:nowrap}
+.menu-note{margin-top:36px;color:var(--text-2);font-size:.88rem}
+@media(max-width:760px){.menu-grid{grid-template-columns:1fr}.menu-grid > .menu-item:nth-child(2){border-top:1px solid var(--line)}}
+
+/* FEATURE BAND */
+.band{position:relative;overflow:hidden;padding:0}
+.band img{width:100%;height:520px;object-fit:cover}
+.band-overlay{
+  position:absolute;inset:0;display:flex;align-items:flex-end;
+  background:linear-gradient(180deg,rgba(19,17,16,.25) 0%,rgba(19,17,16,.88) 100%);
+}
+.band-copy{max-width:1240px;margin:0 auto;padding:0 24px 64px;width:100%}
+.band-copy h2{font-size:clamp(1.8rem,3.2vw,2.6rem);max-width:22ch}
+.band-copy p{color:var(--text-2);max-width:48ch;margin-top:12px}
+
+/* CARDS (Spezialitäten) */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.duo-card{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.duo-card img{height:300px;width:100%;object-fit:cover}
+.duo-card .pad{padding:28px}
+.duo-card h3{font-size:1.4rem;margin-bottom:8px}
+.duo-card p{color:var(--text-2);font-size:.95rem}
+@media(max-width:760px){.duo{grid-template-columns:1fr}}
+
+/* REVIEWS */
+.reviews{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rev-grid{display:grid;grid-template-columns:2fr 3fr;gap:64px;align-items:center}
+.rev-score{text-align:left}
+.rev-score .num{font-family:"Cabinet Grotesk";font-size:clamp(4rem,8vw,7rem);font-weight:800;color:var(--accent);line-height:1}
+.rev-score .stars{font-size:1.4rem;letter-spacing:4px;color:var(--accent);margin:10px 0 4px}
+.rev-score span{color:var(--text-2)}
+.rev-quotes blockquote{padding:20px 0}
+.rev-quotes blockquote + blockquote{border-top:1px solid var(--line)}
+.rev-quotes p{font-size:1.05rem}
+.rev-quotes footer{color:var(--text-2);font-size:.88rem;margin-top:8px}
+@media(max-width:760px){.rev-grid{grid-template-columns:1fr;gap:32px}}
+
+/* KONTAKT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.hours-table{width:100%;border-collapse:collapse;margin-top:20px}
+.hours-table td{padding:12px 0;border-bottom:1px solid var(--line);color:var(--text-2)}
+.hours-table td:last-child{text-align:right;color:var(--text);font-weight:500}
+.contact-block{margin-top:20px}
+.contact-block a.big{
+  display:block;font-family:"Cabinet Grotesk";font-size:1.5rem;font-weight:700;margin:6px 0;
+  transition:color .2s;
+}
+.contact-block a.big:hover{color:var(--accent)}
+.contact-block .label{color:var(--text-2);font-size:.88rem;margin-top:20px}
+.map-cta{margin-top:28px;display:inline-block}
+@media(max-width:760px){.contact-grid{grid-template-columns:1fr;gap:40px}}
+
+/* FOOTER */
+footer.site{border-top:1px solid var(--line);padding:32px 0;color:var(--text-2);font-size:.88rem}
+.foot-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ===== Geräte-Anpassung ===== */
+/* Großer Desktop / 4K */
+@media(min-width:1700px){
+  body{font-size:17px}
+  .wrap,.nav-inner,.strip-inner,.band-copy{max-width:1400px}
+  .hero-copy{padding-left:calc(max((100vw - 1400px)/2, 24px))}
+}
+/* Laptop 13" */
+@media(max-width:1180px){
+  section{padding:80px 0}
+  .hero h1{font-size:clamp(2.4rem,4.6vw,3.8rem)}
+}
+/* Tablet (iPad hoch) */
+@media(max-width:1024px){
+  .contact-grid,.rev-grid{gap:40px}
+  .band img{height:420px}
+}
+/* Phone */
+@media(max-width:600px){
+  section{padding:64px 0}
+  .wrap{padding:0 18px}
+  .nav-inner{padding:0 18px}
+  .hero-copy{padding:96px 18px 32px}
+  .hero h1{font-size:clamp(2.1rem,9vw,2.8rem)}
+  .hero-ctas{flex-direction:column}
+  .btn-primary,.btn-ghost,.map-cta{text-align:center;width:100%;padding:16px 24px}
+  .menu-tabs{gap:8px}
+  .menu-tab{padding:10px 16px;font-size:.88rem;min-height:44px}
+  .band img{height:340px}
+  .band-copy{padding:0 18px 40px}
+  .duo-card img{height:220px}
+  .rev-score .num{font-size:4.2rem}
+  .contact-block a.big{font-size:1.25rem}
+  .foot-inner{flex-direction:column;gap:6px}
+}
+/* Sehr kleine Phones (iPhone SE) */
+@media(max-width:380px){
+  .hero h1{font-size:1.9rem}
+  .strip-cell{padding:20px 18px}
+}
+/* Phone quer */
+@media(max-height:480px) and (orientation:landscape){
+  .hero{min-height:auto}
+  .hero-copy{padding-top:90px;padding-bottom:32px}
+}
+/* iPhone Notch / Safe Areas */
+@supports(padding:max(0px)){
+  .nav-inner,.wrap{padding-left:max(24px, env(safe-area-inset-left));padding-right:max(24px, env(safe-area-inset-right))}
+  footer.site{padding-bottom:max(32px, env(safe-area-inset-bottom))}
+}
+/* Touch-Geräte: Hover-Effekte neutralisieren, größere Targets */
+@media(hover:none){
+  .btn-primary:hover,.nav-cta:hover{transform:none}
+  .nav-links a,.menu-tab{min-height:44px}
+}
+
+/* ===== Animiertes Intro ===== */
+#intro{
+  position:fixed;inset:0;z-index:100;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  background:radial-gradient(120% 120% at 50% 110%, #2a1508 0%, var(--bg) 60%);
+  transition:transform .9s cubic-bezier(.76,0,.24,1);
+}
+#intro.done{transform:translateY(-100%)}
+#intro.removed{display:none}
+.intro-word{
+  display:flex;overflow:hidden;
+  font-family:"Cabinet Grotesk";font-weight:800;
+  font-size:clamp(2.6rem,9vw,6rem);letter-spacing:-.02em;line-height:1.1;
+}
+.intro-word span{
+  display:inline-block;transform:translateY(110%);
+  animation:intro-up .7s cubic-bezier(.16,1,.3,1) forwards;
+}
+.intro-word .acc{color:var(--accent)}
+@keyframes intro-up{to{transform:translateY(0)}}
+.intro-tag{
+  color:var(--text-2);font-size:clamp(.95rem,2.4vw,1.2rem);letter-spacing:.04em;
+  opacity:0;animation:intro-fade .8s ease .9s forwards;
+}
+@keyframes intro-fade{to{opacity:1}}
+.intro-line{
+  width:0;height:2px;background:var(--accent);border-radius:2px;
+  animation:intro-line .8s cubic-bezier(.16,1,.3,1) .55s forwards;
+}
+@keyframes intro-line{to{width:min(320px,60vw)}}
+@media (prefers-reduced-motion:reduce){#intro{display:none}}
+/* Hero-Elemente nach dem Intro einblenden */
+.hero-copy > *{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.hero-img{opacity:0;transition:opacity 1s ease}
+body.intro-finished .hero-copy > *{opacity:1;transform:none}
+body.intro-finished .hero-copy > *:nth-child(1){transition-delay:.15s}
+body.intro-finished .hero-copy > *:nth-child(2){transition-delay:.3s}
+body.intro-finished .hero-copy > *:nth-child(3){transition-delay:.45s}
+body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
+@media (prefers-reduced-motion:reduce){
+  .hero-copy > *,.hero-img{opacity:1;transform:none}
+}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div id="intro" aria-hidden="true">
+  <div class="intro-word" id="intro-word"></div>
+  <div class="intro-line"></div>
+  <div class="intro-tag">Einmal essen ... nicht vergessen</div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">Döneria <span>Dornbusch</span></a>
+    <div class="nav-links">
+      <a href="#speisekarte">Speisekarte</a>
+      <a href="#ueber">Über uns</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+    <a href="tel:+496996865511" class="nav-cta">069 96865511</a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#speisekarte">Speisekarte</a>
+  <a href="#ueber">Über uns</a>
+  <a href="#bewertungen">Bewertungen</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="tel:+496996865511" style="color:var(--accent);font-weight:600">Anrufen: 069 96865511</a>
+</div>
+
+<header class="hero">
+  <div class="hero-copy">
+    <h1>Frisch vom Spieß.<br>Mitten im <em>Dornbusch.</em></h1>
+    <p>Täglich frisch gegrillter Döner, hausgemachte Soßen und knuspriges Brot an der Eschersheimer Landstraße. Alles halal.</p>
+    <div class="hero-ctas">
+      <a href="#speisekarte" class="btn-primary">Zur Speisekarte</a>
+      <a href="https://maps.google.com/?q=Döneria+Dornbusch,+Eschersheimer+Landstraße+322,+60320+Frankfurt" target="_blank" rel="noopener" class="btn-ghost">Route planen</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="assets/hero.jpg" alt="Frisch zubereiteter Döner mit Salat und hausgemachter Soße" fetchpriority="high">
+  </div>
+</header>
+
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-cell">
+      <b id="open-status" class="open-now">Jetzt geöffnet</b>
+      <span>Mo bis Sa 10:00 bis 22:30 · So 12:00 bis 22:00</span>
+    </div>
+    <div class="strip-cell">
+      <b>4,6 von 5 Sternen</b>
+      <span>über 220 Google-Bewertungen</span>
+    </div>
+    <div class="strip-cell">
+      <b>100% Halal</b>
+      <span>mit vegetarischen und veganen Optionen</span>
+    </div>
+  </div>
+</div>
+
+<section id="speisekarte">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Speisekarte</h2>
+      <p>Alles wird frisch vor deinen Augen zubereitet. Soßen machen wir selbst.</p>
+    </div>
+    <div class="menu-tabs reveal" role="tablist">
+      <button class="menu-tab active" data-cat="doener" role="tab" aria-selected="true">Döner &amp; Dürüm</button>
+      <button class="menu-tab" data-cat="lahmacun" role="tab" aria-selected="false">Lahmacun &amp; Pide</button>
+      <button class="menu-tab" data-cat="pizza" role="tab" aria-selected="false">Pizza</button>
+      <button class="menu-tab" data-cat="veggie" role="tab" aria-selected="false">Vegetarisch &amp; Falafel</button>
+      <button class="menu-tab" data-cat="snacks" role="tab" aria-selected="false">Schnitzel &amp; Snacks</button>
+      <button class="menu-tab" data-cat="salate" role="tab" aria-selected="false">Salate, Suppe &amp; Getränke</button>
+    </div>
+    <div class="menu-grid reveal" id="menu-grid"></div>
+    <p class="menu-note">Preise laut Aushang. Alle Gerichte auch zum Mitnehmen. Bei Allergien sprich uns einfach an.</p>
+  </div>
+</section>
+
+<section class="band" id="ueber">
+  <img src="assets/grill.jpg" alt="Döner-Spieß am Grill in der Döneria Dornbusch" loading="lazy">
+  <div class="band-overlay">
+    <div class="band-copy">
+      <h2>Jeden Morgen frisch aufgesetzt</h2>
+      <p>Unser Spieß dreht sich vom ersten Kunden bis zum letzten. Knusprig angegrillt, dünn geschnitten, direkt ins frische Brot. So einfach ist gutes Essen.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Nicht nur Döner</h2>
+    </div>
+    <div class="duo reveal">
+      <div class="duo-card">
+        <img src="assets/dueruem.jpg" alt="Dürüm-Wrap mit Dönerfleisch und Gemüse" loading="lazy">
+        <div class="pad">
+          <h3>Dürüm, richtig gerollt</h3>
+          <p>Mit Fleisch, Salat und Soße, prall gefüllt und gerollt. Der Klassiker für die Hand.</p>
+        </div>
+      </div>
+      <div class="duo-card">
+        <img src="assets/falafel.jpg" alt="Falafel-Teller mit Hummus und Pita" loading="lazy">
+        <div class="pad">
+          <h3>Falafel &amp; Veggie</h3>
+          <p>Außen knusprig, innen saftig. Als Sandwich, Dürüm, Teller oder Menü, mit Salat und Soße.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="bewertungen">
+  <div class="wrap">
+    <div class="rev-grid">
+      <div class="rev-score reveal">
+        <div class="num">4,6</div>
+        <div class="stars">★★★★★</div>
+        <span>aus über 220 Google-Bewertungen</span>
+      </div>
+      <div class="rev-quotes reveal">
+        <blockquote>
+          <p>"Ein echter Geheimtipp im Dornbusch. Das Fleisch ist super gewürzt und das Brot immer frisch."</p>
+          <footer>Melih K. · Google Rezension</footer>
+        </blockquote>
+        <blockquote>
+          <p>"Schneller, freundlicher Service und faire Preise. Die hausgemachten Soßen machen den Unterschied."</p>
+          <footer>Annika R. · Google Rezension</footer>
+        </blockquote>
+        <blockquote>
+          <p>"Bester Döner auf der Eschersheimer. Auch die vegetarischen Sachen sind top."</p>
+          <footer>Jonas W. · Google Rezension</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <h2 class="display" style="font-size:clamp(2rem,3.6vw,3rem);font-weight:800">Komm vorbei</h2>
+        <div class="contact-block">
+          <p class="label">Adresse</p>
+          <a class="big" href="https://maps.google.com/?q=Döneria+Dornbusch,+Eschersheimer+Landstraße+322,+60320+Frankfurt" target="_blank" rel="noopener">Eschersheimer Landstraße 322<br>60320 Frankfurt am Main</a>
+          <p class="label">Telefon</p>
+          <a class="big" href="tel:+496996865511">069 96865511</a>
+        </div>
+        <a href="https://maps.google.com/?q=Döneria+Dornbusch,+Eschersheimer+Landstraße+322,+60320+Frankfurt" target="_blank" rel="noopener" class="btn-primary map-cta">In Google Maps öffnen</a>
+      </div>
+      <div class="reveal">
+        <h3 style="font-size:1.3rem">Öffnungszeiten</h3>
+        <table class="hours-table">
+          <tr><td>Montag bis Freitag</td><td>10:00 bis 22:30</td></tr>
+          <tr><td>Samstag</td><td>10:00 bis 22:30</td></tr>
+          <tr><td>Sonntag</td><td>12:00 bis 22:00</td></tr>
+        </table>
+        <p style="color:var(--text-2);font-size:.9rem;margin-top:20px">U-Bahn Fritz-Tarnow-Straße (U1, U2, U3, U8) direkt vor der Tür, Station Dornbusch nur wenige Minuten entfernt. Rollstuhlgerechter Zugang. Sitzplätze drinnen und draußen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap foot-inner">
+    <span>© 2026 Döneria Dornbusch, Frankfurt am Main</span>
+    <span>Alle Gerichte halal · Impressum &amp; Datenschutz auf Anfrage</span>
+  </div>
+</footer>
+
+<script>
+const MENU = {
+  doener: [
+    {n:"Drehspieß Sandwich (Döner)", d:"Mit Salat und Soße", p:"7,50"},
+    {n:"Drehspieß Menü (Döner)", d:"Mit Pommes und 1 Softgetränk 0,33 l", p:"11,00"},
+    {n:"Drehspieß Sandwich (Döner)", d:"Mit Fleisch, Pommes und Soße", p:"7,50"},
+    {n:"Drehspieß Sandwich (Döner)", d:"Mit Fleisch, Weichkäse, Salat und Soße", p:"8,50"},
+    {n:"Schüler Sandwich (Döner)", d:"Mit Salat und Soße", p:"5,50"},
+    {n:"Drehspieß Teller (Döner)", d:"Mit Pommes oder Reis, Salat und Soße", p:"13,00"},
+    {n:"Dürüm", d:"Mit Fleisch, Salat und Soße", p:"8,30"},
+    {n:"Dürüm Menü", d:"Mit Pommes und 1 Softgetränk 0,33 l", p:"12,00"},
+    {n:"Box", d:"Mit Fleisch und Pommes, klein 5,50 € / groß 7,50 €", p:"ab 5,50"},
+    {n:"Extra Drehspießfleisch (Döner)", d:"", p:"1,50"},
+    {n:"Extra Weichkäse", d:"", p:"0,80"}
+  ],
+  lahmacun: [
+    {n:"Lahmacun", d:"Mit Salat und Soße", p:"5,50"},
+    {n:"Lahmacun", d:"Mit Weichkäse, Salat und Soße", p:"6,00"},
+    {n:"Lahmacun", d:"Mit Fleisch, Salat und Soße", p:"8,30"},
+    {n:"Lahmacun Menü", d:"Mit Fleisch, Pommes und 1 Softgetränk 0,33 l", p:"12,00"},
+    {n:"Pide Hackfleisch", d:"Mit Hackfleisch", p:"8,50"},
+    {n:"Pide Spinat Käse", d:"Mit Spinat und Käse", p:"8,50"},
+    {n:"Pide Sucuk", d:"Mit türkischer Knoblauchwurst", p:"8,50"},
+    {n:"Pide mit Fleisch", d:"Mit Fleisch", p:"9,00"}
+  ],
+  pizza: [
+    {n:"Pizza Margherita", d:"Mit Tomatensoße und Käse", p:"7,00"},
+    {n:"Pizza Salami", d:"Mit Rindersalami", p:"8,50"},
+    {n:"Pizza Sucuk", d:"Mit türkischer Knoblauchwurst", p:"9,00"},
+    {n:"Pizza Vegetarisch", d:"Mit verschiedenen Gemüsen", p:"9,00"},
+    {n:"Pizza mit Fleisch", d:"Mit Fleisch und Soße", p:"10,00"},
+    {n:"Pizza Thunfisch", d:"Mit Thunfisch und Zwiebeln", p:"10,00"}
+  ],
+  veggie: [
+    {n:"Veggie Sandwich", d:"Mit Weichkäse, Salat und Soße", p:"6,00"},
+    {n:"Veggie Dürüm", d:"Mit Weichkäse, Salat und Soße", p:"6,50"},
+    {n:"Vegetarischer Teller", d:"", p:"9,00"},
+    {n:"Falafel Sandwich", d:"Mit Salat und Soße", p:"6,00"},
+    {n:"Falafel Menü", d:"Mit Pommes und 1 Softgetränk 0,33 l", p:"10,00"},
+    {n:"Falafel Dürüm", d:"Mit Salat und Soße", p:"6,50"},
+    {n:"Falafel Teller", d:"Mit Pommes oder Reis, Salat und Soße", p:"9,00"}
+  ],
+  snacks: [
+    {n:"Hähnchenschnitzel Sandwich", d:"Mit Salat und Soße", p:"6,00"},
+    {n:"Hähnchenschnitzel", d:"Mit Pommes oder Reis, Salat und Soße", p:"9,00"},
+    {n:"Chicken Nuggets", d:"Mit Pommes oder Reis, Salat und Soße", p:"8,50"},
+    {n:"Sucuk Sandwich", d:"Mit türkischer Knoblauchwurst und Salat", p:"6,00"},
+    {n:"Sucuk Menü", d:"Mit Pommes und 1 Softgetränk 0,33 l", p:"10,00"},
+    {n:"Zigarren Börek", d:"5 Stück", p:"5,00"},
+    {n:"Pommes", d:"Mit Ketchup oder Mayo", p:"4,00"},
+    {n:"Rindswurst", d:"Im Brot 4,70 € / mit Pommes 8,50 €", p:"ab 4,70"},
+    {n:"Tagesmenü", d:"Mit Reis und Salat", p:"10,00"}
+  ],
+  salate: [
+    {n:"Linsensuppe", d:"Mercimek Çorbası", p:"6,00"},
+    {n:"Gemischter Salat", d:"Mit Weichkäse", p:"7,00"},
+    {n:"Thunfisch Salat", d:"Salat mit Thunfisch", p:"8,00"},
+    {n:"Drehspieß Salat", d:"Salat mit Fleisch", p:"8,50"},
+    {n:"Baklava", d:"5 Stück", p:"4,00"},
+    {n:"Kalte Getränke", d:"", p:"2,50"},
+    {n:"Kaffee", d:"", p:"2,00"},
+    {n:"Tee", d:"", p:"2,00"}
+  ]
+};
+
+const grid = document.getElementById("menu-grid");
+function render(cat){
+  grid.innerHTML = MENU[cat].map(i =>
+    `<div class="menu-item"><div><div class="mi-name">${i.n}</div>${i.d?`<div class="mi-desc">${i.d}</div>`:""}</div><div class="mi-price">${i.p} €</div></div>`
+  ).join("");
+}
+document.querySelectorAll(".menu-tab").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".menu-tab").forEach(b=>{b.classList.remove("active");b.setAttribute("aria-selected","false")});
+    btn.classList.add("active");btn.setAttribute("aria-selected","true");
+    render(btn.dataset.cat);
+  });
+});
+render("doener");
+
+// Öffnungsstatus live
+(function(){
+  const el = document.getElementById("open-status");
+  const now = new Date();
+  const day = now.getDay(); // 0 = Sonntag
+  const mins = now.getHours()*60 + now.getMinutes();
+  const open = day === 0 ? (mins >= 720 && mins < 1320) : (mins >= 600 && mins < 1350);
+  if(!open){ el.textContent = "Gerade geschlossen"; el.style.color = "var(--text-2)"; }
+})();
+
+// Animiertes Intro
+(function(){
+  const intro = document.getElementById("intro");
+  const word = document.getElementById("intro-word");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let seen = false;
+  try { seen = sessionStorage.getItem("introSeen") === "1"; } catch(e) {}
+  if(reduce || seen){
+    intro.classList.add("removed");
+    document.body.classList.add("intro-finished");
+    return;
+  }
+  try { sessionStorage.setItem("introSeen", "1"); } catch(e) {}
+  const letters = "Döneria";
+  word.innerHTML = [...letters].map((ch,i)=>
+    `<span class="${i===1?"acc":""}" style="animation-delay:${.08*i+.1}s">${ch}</span>`
+  ).join("");
+  document.body.style.overflow = "hidden";
+  setTimeout(()=>{
+    intro.classList.add("done");
+    document.body.classList.add("intro-finished");
+    document.body.style.overflow = "";
+    setTimeout(()=>intro.classList.add("removed"), 950);
+  }, 2100);
+  // Zurück-Navigation aus dem Browser-Cache: Intro nie erneut zeigen
+  window.addEventListener("pageshow", e=>{
+    if(e.persisted){
+      intro.classList.add("done","removed");
+      document.body.classList.add("intro-finished");
+      document.body.style.overflow = "";
+    }
+  });
+})();
+
+// Mobile-Menü
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobile-menu");
+burger.addEventListener("click",()=>{
+  const open = mobileMenu.classList.toggle("open");
+  burger.setAttribute("aria-expanded", open);
+  burger.textContent = open ? "✕" : "☰";
+});
+mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+  mobileMenu.classList.remove("open");
+  burger.setAttribute("aria-expanded","false");
+  burger.textContent = "☰";
+}));
+
+// Scroll reveal
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
