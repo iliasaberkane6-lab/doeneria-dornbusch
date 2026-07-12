@@ -6,15 +6,16 @@
 <title>Döneria Dornbusch · Döner in Frankfurt am Main</title>
 <meta name="description" content="Döneria Dornbusch: frisch gegrillter Döner, Dürüm, Falafel und hausgemachte Soßen an der Eschersheimer Landstraße 322, Frankfurt. Halal. Täglich geöffnet.">
 <meta property="og:title" content="Döneria Dornbusch · Frankfurt">
-<meta property="og:description" content="Frischer Döner, Dürüm und Falafel im Dornbusch. 4,7 Sterne. Halal.">
-<meta property="og:image" content="assets/hero.jpg">
+<meta property="og:description" content="Frischer Döner, Dürüm und Falafel im Dornbusch. 4,6 Sterne. Halal.">
+<meta property="og:image" content="assets/hero-1600.jpg">
 <link href="assets/fonts/fonts.css" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "Döneria Dornbusch",
-  "servesCuisine": ["Türkisch", "Döner", "Kebab"],
+  "image": "assets/hero-1600.jpg",
+  "servesCuisine": ["Turkish", "Doner Kebab"],
   "telephone": "+49 69 96865511",
   "address": {
     "@type": "PostalAddress",
@@ -358,7 +359,10 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
     </div>
   </div>
   <div class="hero-img">
-    <img src="assets/hero.jpg" alt="Frisch zubereiteter Döner mit Salat und hausgemachter Soße" fetchpriority="high">
+    <picture>
+      <source type="image/webp" srcset="assets/hero-480.webp 480w, assets/hero-900.webp 900w, assets/hero-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 50vw">
+      <img src="assets/hero-1600.jpg" width="1600" height="903" alt="Frisch zubereiteter Döner mit Salat und hausgemachter Soße" fetchpriority="high">
+    </picture>
   </div>
 </header>
 
@@ -393,13 +397,76 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
       <button class="menu-tab" data-cat="snacks" role="tab" aria-selected="false">Schnitzel &amp; Snacks</button>
       <button class="menu-tab" data-cat="salate" role="tab" aria-selected="false">Salate, Suppe &amp; Getränke</button>
     </div>
-    <div class="menu-grid reveal" id="menu-grid"></div>
+    <div class="menu-grid reveal" data-cat="doener">
+      <div class="menu-item"><div><div class="mi-name">Drehspieß Sandwich (Döner)</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">7,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Drehspieß Menü (Döner)</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">11,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Drehspieß Sandwich (Döner)</div><div class="mi-desc">Mit Fleisch, Pommes und Soße</div></div><div class="mi-price">7,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Drehspieß Sandwich (Döner)</div><div class="mi-desc">Mit Fleisch, Weichkäse, Salat und Soße</div></div><div class="mi-price">8,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Schüler Sandwich (Döner)</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">5,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Drehspieß Teller (Döner)</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">13,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Dürüm</div><div class="mi-desc">Mit Fleisch, Salat und Soße</div></div><div class="mi-price">8,30 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Dürüm Menü</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">12,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Box</div><div class="mi-desc">Mit Fleisch und Pommes, klein 5,50 € / groß 7,50 €</div></div><div class="mi-price">ab 5,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Extra Drehspießfleisch (Döner)</div></div><div class="mi-price">1,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Extra Weichkäse</div></div><div class="mi-price">0,80 €</div></div>
+    </div>
+    <div class="menu-grid" data-cat="lahmacun" hidden>
+      <div class="menu-item"><div><div class="mi-name">Lahmacun</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">5,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Lahmacun</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Lahmacun</div><div class="mi-desc">Mit Fleisch, Salat und Soße</div></div><div class="mi-price">8,30 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Lahmacun Menü</div><div class="mi-desc">Mit Fleisch, Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">12,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Pide Hackfleisch</div><div class="mi-desc">Mit Hackfleisch</div></div><div class="mi-price">8,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Pide Spinat Käse</div><div class="mi-desc">Mit Spinat und Käse</div></div><div class="mi-price">8,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Pide Sucuk</div><div class="mi-desc">Mit türkischer Knoblauchwurst</div></div><div class="mi-price">8,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Pide mit Fleisch</div><div class="mi-desc">Mit Fleisch</div></div><div class="mi-price">9,00 €</div></div>
+    </div>
+    <div class="menu-grid" data-cat="pizza" hidden>
+      <div class="menu-item"><div><div class="mi-name">Pizza Margherita</div><div class="mi-desc">Mit Tomatensoße und Käse</div></div><div class="mi-price">7,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Pizza Salami</div><div class="mi-desc">Mit Rindersalami</div></div><div class="mi-price">8,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Pizza Sucuk</div><div class="mi-desc">Mit türkischer Knoblauchwurst</div></div><div class="mi-price">9,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Pizza Vegetarisch</div><div class="mi-desc">Mit verschiedenen Gemüsen</div></div><div class="mi-price">9,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Pizza mit Fleisch</div><div class="mi-desc">Mit Fleisch und Soße</div></div><div class="mi-price">10,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Pizza Thunfisch</div><div class="mi-desc">Mit Thunfisch und Zwiebeln</div></div><div class="mi-price">10,00 €</div></div>
+    </div>
+    <div class="menu-grid" data-cat="veggie" hidden>
+      <div class="menu-item"><div><div class="mi-name">Veggie Sandwich</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Veggie Dürüm</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Vegetarischer Teller</div></div><div class="mi-price">9,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Falafel Sandwich</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Falafel Menü</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">10,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Falafel Dürüm</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Falafel Teller</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">9,00 €</div></div>
+    </div>
+    <div class="menu-grid" data-cat="snacks" hidden>
+      <div class="menu-item"><div><div class="mi-name">Hähnchenschnitzel Sandwich</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Hähnchenschnitzel</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">9,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Chicken Nuggets</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">8,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Sucuk Sandwich</div><div class="mi-desc">Mit türkischer Knoblauchwurst und Salat</div></div><div class="mi-price">6,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Sucuk Menü</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">10,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Zigarren Börek</div><div class="mi-desc">5 Stück</div></div><div class="mi-price">5,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Pommes</div><div class="mi-desc">Mit Ketchup oder Mayo</div></div><div class="mi-price">4,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Rindswurst</div><div class="mi-desc">Im Brot 4,70 € / mit Pommes 8,50 €</div></div><div class="mi-price">ab 4,70 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Tagesmenü</div><div class="mi-desc">Mit Reis und Salat</div></div><div class="mi-price">10,00 €</div></div>
+    </div>
+    <div class="menu-grid" data-cat="salate" hidden>
+      <div class="menu-item"><div><div class="mi-name">Linsensuppe</div><div class="mi-desc">Mercimek Çorbası</div></div><div class="mi-price">6,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Gemischter Salat</div><div class="mi-desc">Mit Weichkäse</div></div><div class="mi-price">7,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Thunfisch Salat</div><div class="mi-desc">Salat mit Thunfisch</div></div><div class="mi-price">8,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Drehspieß Salat</div><div class="mi-desc">Salat mit Fleisch</div></div><div class="mi-price">8,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Baklava</div><div class="mi-desc">5 Stück</div></div><div class="mi-price">4,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Kalte Getränke</div></div><div class="mi-price">2,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Kaffee</div></div><div class="mi-price">2,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name">Tee</div></div><div class="mi-price">2,00 €</div></div>
+    </div>
     <p class="menu-note">Preise laut Aushang. Alle Gerichte auch zum Mitnehmen. Bei Allergien sprich uns einfach an.</p>
   </div>
 </section>
 
 <section class="band" id="ueber">
-  <img src="assets/grill.jpg" alt="Döner-Spieß am Grill in der Döneria Dornbusch" loading="lazy">
+  <picture>
+    <source type="image/webp" srcset="assets/grill-480.webp 480w, assets/grill-900.webp 900w, assets/grill-1600.webp 1600w" sizes="100vw">
+    <img src="assets/grill-1600.jpg" width="1600" height="1066" alt="Döner-Spieß am Grill in der Döneria Dornbusch" loading="lazy">
+  </picture>
   <div class="band-overlay">
     <div class="band-copy">
       <h2>Jeden Morgen frisch aufgesetzt</h2>
@@ -415,14 +482,20 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
     </div>
     <div class="duo reveal">
       <div class="duo-card">
-        <img src="assets/dueruem.jpg" alt="Dürüm-Wrap mit Dönerfleisch und Gemüse" loading="lazy">
+        <picture>
+          <source type="image/webp" srcset="assets/dueruem-480.webp 480w, assets/dueruem-900.webp 900w, assets/dueruem-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 50vw">
+          <img src="assets/dueruem-1600.jpg" width="1600" height="1205" alt="Dürüm-Wrap mit Dönerfleisch und Gemüse" loading="lazy">
+        </picture>
         <div class="pad">
           <h3>Dürüm, richtig gerollt</h3>
           <p>Mit Fleisch, Salat und Soße, prall gefüllt und gerollt. Der Klassiker für die Hand.</p>
         </div>
       </div>
       <div class="duo-card">
-        <img src="assets/falafel.jpg" alt="Falafel-Teller mit Hummus und Pita" loading="lazy">
+        <picture>
+          <source type="image/webp" srcset="assets/falafel-480.webp 480w, assets/falafel-900.webp 900w, assets/falafel-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 50vw">
+          <img src="assets/falafel-1600.jpg" width="1600" height="1205" alt="Falafel-Teller mit Hummus und Pita" loading="lazy">
+        </picture>
         <div class="pad">
           <h3>Falafel &amp; Veggie</h3>
           <p>Außen knusprig, innen saftig. Als Sandwich, Dürüm, Teller oder Menü, mit Salat und Soße.</p>
@@ -492,84 +565,20 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
 </footer>
 
 <script>
-const MENU = {
-  doener: [
-    {n:"Drehspieß Sandwich (Döner)", d:"Mit Salat und Soße", p:"7,50"},
-    {n:"Drehspieß Menü (Döner)", d:"Mit Pommes und 1 Softgetränk 0,33 l", p:"11,00"},
-    {n:"Drehspieß Sandwich (Döner)", d:"Mit Fleisch, Pommes und Soße", p:"7,50"},
-    {n:"Drehspieß Sandwich (Döner)", d:"Mit Fleisch, Weichkäse, Salat und Soße", p:"8,50"},
-    {n:"Schüler Sandwich (Döner)", d:"Mit Salat und Soße", p:"5,50"},
-    {n:"Drehspieß Teller (Döner)", d:"Mit Pommes oder Reis, Salat und Soße", p:"13,00"},
-    {n:"Dürüm", d:"Mit Fleisch, Salat und Soße", p:"8,30"},
-    {n:"Dürüm Menü", d:"Mit Pommes und 1 Softgetränk 0,33 l", p:"12,00"},
-    {n:"Box", d:"Mit Fleisch und Pommes, klein 5,50 € / groß 7,50 €", p:"ab 5,50"},
-    {n:"Extra Drehspießfleisch (Döner)", d:"", p:"1,50"},
-    {n:"Extra Weichkäse", d:"", p:"0,80"}
-  ],
-  lahmacun: [
-    {n:"Lahmacun", d:"Mit Salat und Soße", p:"5,50"},
-    {n:"Lahmacun", d:"Mit Weichkäse, Salat und Soße", p:"6,00"},
-    {n:"Lahmacun", d:"Mit Fleisch, Salat und Soße", p:"8,30"},
-    {n:"Lahmacun Menü", d:"Mit Fleisch, Pommes und 1 Softgetränk 0,33 l", p:"12,00"},
-    {n:"Pide Hackfleisch", d:"Mit Hackfleisch", p:"8,50"},
-    {n:"Pide Spinat Käse", d:"Mit Spinat und Käse", p:"8,50"},
-    {n:"Pide Sucuk", d:"Mit türkischer Knoblauchwurst", p:"8,50"},
-    {n:"Pide mit Fleisch", d:"Mit Fleisch", p:"9,00"}
-  ],
-  pizza: [
-    {n:"Pizza Margherita", d:"Mit Tomatensoße und Käse", p:"7,00"},
-    {n:"Pizza Salami", d:"Mit Rindersalami", p:"8,50"},
-    {n:"Pizza Sucuk", d:"Mit türkischer Knoblauchwurst", p:"9,00"},
-    {n:"Pizza Vegetarisch", d:"Mit verschiedenen Gemüsen", p:"9,00"},
-    {n:"Pizza mit Fleisch", d:"Mit Fleisch und Soße", p:"10,00"},
-    {n:"Pizza Thunfisch", d:"Mit Thunfisch und Zwiebeln", p:"10,00"}
-  ],
-  veggie: [
-    {n:"Veggie Sandwich", d:"Mit Weichkäse, Salat und Soße", p:"6,00"},
-    {n:"Veggie Dürüm", d:"Mit Weichkäse, Salat und Soße", p:"6,50"},
-    {n:"Vegetarischer Teller", d:"", p:"9,00"},
-    {n:"Falafel Sandwich", d:"Mit Salat und Soße", p:"6,00"},
-    {n:"Falafel Menü", d:"Mit Pommes und 1 Softgetränk 0,33 l", p:"10,00"},
-    {n:"Falafel Dürüm", d:"Mit Salat und Soße", p:"6,50"},
-    {n:"Falafel Teller", d:"Mit Pommes oder Reis, Salat und Soße", p:"9,00"}
-  ],
-  snacks: [
-    {n:"Hähnchenschnitzel Sandwich", d:"Mit Salat und Soße", p:"6,00"},
-    {n:"Hähnchenschnitzel", d:"Mit Pommes oder Reis, Salat und Soße", p:"9,00"},
-    {n:"Chicken Nuggets", d:"Mit Pommes oder Reis, Salat und Soße", p:"8,50"},
-    {n:"Sucuk Sandwich", d:"Mit türkischer Knoblauchwurst und Salat", p:"6,00"},
-    {n:"Sucuk Menü", d:"Mit Pommes und 1 Softgetränk 0,33 l", p:"10,00"},
-    {n:"Zigarren Börek", d:"5 Stück", p:"5,00"},
-    {n:"Pommes", d:"Mit Ketchup oder Mayo", p:"4,00"},
-    {n:"Rindswurst", d:"Im Brot 4,70 € / mit Pommes 8,50 €", p:"ab 4,70"},
-    {n:"Tagesmenü", d:"Mit Reis und Salat", p:"10,00"}
-  ],
-  salate: [
-    {n:"Linsensuppe", d:"Mercimek Çorbası", p:"6,00"},
-    {n:"Gemischter Salat", d:"Mit Weichkäse", p:"7,00"},
-    {n:"Thunfisch Salat", d:"Salat mit Thunfisch", p:"8,00"},
-    {n:"Drehspieß Salat", d:"Salat mit Fleisch", p:"8,50"},
-    {n:"Baklava", d:"5 Stück", p:"4,00"},
-    {n:"Kalte Getränke", d:"", p:"2,50"},
-    {n:"Kaffee", d:"", p:"2,00"},
-    {n:"Tee", d:"", p:"2,00"}
-  ]
-};
-
-const grid = document.getElementById("menu-grid");
-function render(cat){
-  grid.innerHTML = MENU[cat].map(i =>
-    `<div class="menu-item"><div><div class="mi-name">${i.n}</div>${i.d?`<div class="mi-desc">${i.d}</div>`:""}</div><div class="mi-price">${i.p} €</div></div>`
-  ).join("");
+// Speisekarte: alle Gerichte stehen bereits als statisches HTML in jedem
+// .menu-grid[data-cat] Block (crawlbar ohne JS). Tabs schalten nur die
+// Sichtbarkeit um, es wird kein Inhalt mehr per JS injiziert.
+const menuGrids = document.querySelectorAll(".menu-grid[data-cat]");
+function showCat(cat){
+  menuGrids.forEach(g => { g.hidden = g.dataset.cat !== cat; });
 }
 document.querySelectorAll(".menu-tab").forEach(btn=>{
   btn.addEventListener("click",()=>{
     document.querySelectorAll(".menu-tab").forEach(b=>{b.classList.remove("active");b.setAttribute("aria-selected","false")});
     btn.classList.add("active");btn.setAttribute("aria-selected","true");
-    render(btn.dataset.cat);
+    showCat(btn.dataset.cat);
   });
 });
-render("doener");
 
 // Öffnungsstatus live
 (function(){
