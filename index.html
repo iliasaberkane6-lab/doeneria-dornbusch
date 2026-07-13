@@ -2,21 +2,36 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Döneria Dornbusch · Döner in Frankfurt am Main</title>
 <meta name="description" content="Döneria Dornbusch: frisch gegrillter Döner, Dürüm, Falafel und hausgemachte Soßen an der Eschersheimer Landstraße 322, Frankfurt. Halal. Täglich geöffnet.">
+<meta name="theme-color" content="#f7ecd9">
+<meta property="og:type" content="restaurant.restaurant">
 <meta property="og:title" content="Döneria Dornbusch · Frankfurt">
 <meta property="og:description" content="Frischer Döner, Dürüm und Falafel im Dornbusch. 4,6 Sterne. Halal.">
-<meta property="og:image" content="assets/hero-1600.jpg">
+<meta property="og:image" content="https://iliasaberkane6-lab.github.io/doeneria-dornbusch/assets/hero-1600.jpg">
+<meta property="og:url" content="https://iliasaberkane6-lab.github.io/doeneria-dornbusch/">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Döneria Dornbusch · Frankfurt">
+<meta name="twitter:description" content="Frischer Döner, Dürüm und Falafel im Dornbusch. 4,6 Sterne. Halal.">
+<meta name="twitter:image" content="https://iliasaberkane6-lab.github.io/doeneria-dornbusch/assets/hero-1600.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <link href="assets/fonts/fonts.css" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "Döneria Dornbusch",
-  "image": "assets/hero-1600.jpg",
+  "url": "https://iliasaberkane6-lab.github.io/doeneria-dornbusch/",
+  "image": "https://iliasaberkane6-lab.github.io/doeneria-dornbusch/assets/hero-1600.jpg",
   "servesCuisine": ["Turkish", "Doner Kebab"],
   "telephone": "+49 69 96865511",
+  "acceptsReservations": "False",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Eschersheimer Landstraße 322",
@@ -24,12 +39,80 @@
     "addressLocality": "Frankfurt am Main",
     "addressCountry": "DE"
   },
+  "geo": {"@type": "GeoCoordinates", "latitude": 50.1420951, "longitude": 8.6691574},
   "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "226"},
   "openingHoursSpecification": [
     {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "22:30"},
     {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "22:00"}
   ],
-  "priceRange": "€"
+  "priceRange": "€",
+  "hasMenu": {
+    "@type": "Menu",
+    "hasMenuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "Döner & Dürüm",
+        "hasMenuItem": [
+          {"@type": "MenuItem", "name": "Drehspieß Sandwich (Döner)", "description": "Mit Salat und Soße", "offers": {"@type": "Offer", "price": "7.50", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Drehspieß Menü (Döner)", "description": "Mit Pommes und 1 Softgetränk 0,33 l", "offers": {"@type": "Offer", "price": "11.00", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Schüler Sandwich (Döner)", "description": "Mit Salat und Soße", "offers": {"@type": "Offer", "price": "5.50", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Drehspieß Teller (Döner)", "description": "Mit Pommes oder Reis, Salat und Soße", "offers": {"@type": "Offer", "price": "13.00", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Dürüm", "description": "Mit Fleisch, Salat und Soße", "offers": {"@type": "Offer", "price": "8.30", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Dürüm Menü", "description": "Mit Pommes und 1 Softgetränk 0,33 l", "offers": {"@type": "Offer", "price": "12.00", "priceCurrency": "EUR"}}
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Lahmacun & Pide",
+        "hasMenuItem": [
+          {"@type": "MenuItem", "name": "Lahmacun", "description": "Mit Fleisch, Salat und Soße", "offers": {"@type": "Offer", "price": "8.30", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Pide Hackfleisch", "description": "Mit Hackfleisch", "offers": {"@type": "Offer", "price": "8.50", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Pide Spinat Käse", "description": "Mit Spinat und Käse", "offers": {"@type": "Offer", "price": "8.50", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Pide Sucuk", "description": "Mit türkischer Knoblauchwurst", "offers": {"@type": "Offer", "price": "8.50", "priceCurrency": "EUR"}}
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Pizza",
+        "hasMenuItem": [
+          {"@type": "MenuItem", "name": "Pizza Margherita", "description": "Mit Tomatensoße und Käse", "offers": {"@type": "Offer", "price": "7.00", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Pizza Salami", "description": "Mit Rindersalami", "offers": {"@type": "Offer", "price": "8.50", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Pizza Sucuk", "description": "Mit türkischer Knoblauchwurst", "offers": {"@type": "Offer", "price": "9.00", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Pizza Vegetarisch", "description": "Mit verschiedenen Gemüsen", "offers": {"@type": "Offer", "price": "9.00", "priceCurrency": "EUR"}}
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Vegetarisch & Falafel",
+        "hasMenuItem": [
+          {"@type": "MenuItem", "name": "Falafel Sandwich", "description": "Mit Salat und Soße", "suitableForDiet": "https://schema.org/VegetarianDiet", "offers": {"@type": "Offer", "price": "6.00", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Falafel Teller", "description": "Mit Pommes oder Reis, Salat und Soße", "suitableForDiet": "https://schema.org/VegetarianDiet", "offers": {"@type": "Offer", "price": "9.00", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Veggie Sandwich", "description": "Mit Weichkäse, Salat und Soße", "suitableForDiet": "https://schema.org/VegetarianDiet", "offers": {"@type": "Offer", "price": "6.00", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Vegetarischer Teller", "suitableForDiet": "https://schema.org/VegetarianDiet", "offers": {"@type": "Offer", "price": "9.00", "priceCurrency": "EUR"}}
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Schnitzel & Snacks",
+        "hasMenuItem": [
+          {"@type": "MenuItem", "name": "Hähnchenschnitzel", "description": "Mit Pommes oder Reis, Salat und Soße", "offers": {"@type": "Offer", "price": "9.00", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Chicken Nuggets", "description": "Mit Pommes oder Reis, Salat und Soße", "offers": {"@type": "Offer", "price": "8.50", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Zigarren Börek", "description": "5 Stück", "offers": {"@type": "Offer", "price": "5.00", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Pommes", "description": "Mit Ketchup oder Mayo", "offers": {"@type": "Offer", "price": "4.00", "priceCurrency": "EUR"}}
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Salate, Suppe & Getränke",
+        "hasMenuItem": [
+          {"@type": "MenuItem", "name": "Linsensuppe", "description": "Mercimek Çorbası", "offers": {"@type": "Offer", "price": "6.00", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Gemischter Salat", "description": "Mit Weichkäse", "offers": {"@type": "Offer", "price": "7.00", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Baklava", "description": "5 Stück", "offers": {"@type": "Offer", "price": "4.00", "priceCurrency": "EUR"}},
+          {"@type": "MenuItem", "name": "Tee", "offers": {"@type": "Offer", "price": "2.00", "priceCurrency": "EUR"}}
+        ]
+      }
+    ]
+  }
 }
 </script>
 <style>
@@ -62,6 +145,13 @@ h1,h2,h3,.display{font-family:"Cabinet Grotesk",system-ui,sans-serif;letter-spac
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1240px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.skip-link{
+  position:absolute;top:-100px;left:16px;z-index:200;
+  background:var(--red);color:var(--paper);font-weight:700;text-transform:uppercase;font-size:.85rem;letter-spacing:.03em;
+  padding:12px 20px;border-radius:var(--radius);border:2px solid var(--ink);transition:top .2s;
+}
+.skip-link:focus{top:16px}
 
 /* NAV */
 nav{
@@ -331,6 +421,8 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
 </head>
 <body>
 
+<a href="#main" class="skip-link">Zum Inhalt springen</a>
+
 <div id="intro" aria-hidden="true">
   <div class="intro-word" id="intro-word"></div>
   <div class="intro-line"></div>
@@ -358,6 +450,7 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
   <a href="tel:+496996865511" style="color:var(--red);font-weight:600">Anrufen: 069 96865511</a>
 </div>
 
+<main id="main">
 <header class="hero">
   <div class="hero-copy">
     <h1>Frisch vom Spieß.<br>Mitten im <em>Dornbusch.</em></h1>
@@ -399,14 +492,14 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
       <p>Alles wird frisch vor deinen Augen zubereitet. Soßen machen wir selbst.</p>
     </div>
     <div class="menu-tabs reveal" role="tablist">
-      <button class="menu-tab active" data-cat="doener" role="tab" aria-selected="true">Döner &amp; Dürüm</button>
-      <button class="menu-tab" data-cat="lahmacun" role="tab" aria-selected="false">Lahmacun &amp; Pide</button>
-      <button class="menu-tab" data-cat="pizza" role="tab" aria-selected="false">Pizza</button>
-      <button class="menu-tab" data-cat="veggie" role="tab" aria-selected="false">Vegetarisch &amp; Falafel</button>
-      <button class="menu-tab" data-cat="snacks" role="tab" aria-selected="false">Schnitzel &amp; Snacks</button>
-      <button class="menu-tab" data-cat="salate" role="tab" aria-selected="false">Salate, Suppe &amp; Getränke</button>
+      <button class="menu-tab active" id="tab-doener" data-cat="doener" role="tab" aria-selected="true" aria-controls="panel-doener">Döner &amp; Dürüm</button>
+      <button class="menu-tab" id="tab-lahmacun" data-cat="lahmacun" role="tab" aria-selected="false" aria-controls="panel-lahmacun">Lahmacun &amp; Pide</button>
+      <button class="menu-tab" id="tab-pizza" data-cat="pizza" role="tab" aria-selected="false" aria-controls="panel-pizza">Pizza</button>
+      <button class="menu-tab" id="tab-veggie" data-cat="veggie" role="tab" aria-selected="false" aria-controls="panel-veggie">Vegetarisch &amp; Falafel</button>
+      <button class="menu-tab" id="tab-snacks" data-cat="snacks" role="tab" aria-selected="false" aria-controls="panel-snacks">Schnitzel &amp; Snacks</button>
+      <button class="menu-tab" id="tab-salate" data-cat="salate" role="tab" aria-selected="false" aria-controls="panel-salate">Salate, Suppe &amp; Getränke</button>
     </div>
-    <div class="menu-grid reveal" data-cat="doener">
+    <div class="menu-grid reveal" id="panel-doener" role="tabpanel" aria-labelledby="tab-doener" data-cat="doener">
       <div class="menu-item"><div><div class="mi-name">Drehspieß Sandwich (Döner)</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">7,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Drehspieß Menü (Döner)</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">11,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Drehspieß Sandwich (Döner)</div><div class="mi-desc">Mit Fleisch, Pommes und Soße</div></div><div class="mi-price">7,50 €</div></div>
@@ -419,7 +512,7 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
       <div class="menu-item"><div><div class="mi-name">Extra Drehspießfleisch (Döner)</div></div><div class="mi-price">1,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Extra Weichkäse</div></div><div class="mi-price">0,80 €</div></div>
     </div>
-    <div class="menu-grid" data-cat="lahmacun" hidden>
+    <div class="menu-grid" id="panel-lahmacun" role="tabpanel" aria-labelledby="tab-lahmacun" data-cat="lahmacun" hidden>
       <div class="menu-item"><div><div class="mi-name">Lahmacun</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">5,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Lahmacun</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Lahmacun</div><div class="mi-desc">Mit Fleisch, Salat und Soße</div></div><div class="mi-price">8,30 €</div></div>
@@ -429,7 +522,7 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
       <div class="menu-item"><div><div class="mi-name">Pide Sucuk</div><div class="mi-desc">Mit türkischer Knoblauchwurst</div></div><div class="mi-price">8,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Pide mit Fleisch</div><div class="mi-desc">Mit Fleisch</div></div><div class="mi-price">9,00 €</div></div>
     </div>
-    <div class="menu-grid" data-cat="pizza" hidden>
+    <div class="menu-grid" id="panel-pizza" role="tabpanel" aria-labelledby="tab-pizza" data-cat="pizza" hidden>
       <div class="menu-item"><div><div class="mi-name">Pizza Margherita</div><div class="mi-desc">Mit Tomatensoße und Käse</div></div><div class="mi-price">7,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Pizza Salami</div><div class="mi-desc">Mit Rindersalami</div></div><div class="mi-price">8,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Pizza Sucuk</div><div class="mi-desc">Mit türkischer Knoblauchwurst</div></div><div class="mi-price">9,00 €</div></div>
@@ -437,7 +530,7 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
       <div class="menu-item"><div><div class="mi-name">Pizza mit Fleisch</div><div class="mi-desc">Mit Fleisch und Soße</div></div><div class="mi-price">10,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Pizza Thunfisch</div><div class="mi-desc">Mit Thunfisch und Zwiebeln</div></div><div class="mi-price">10,00 €</div></div>
     </div>
-    <div class="menu-grid" data-cat="veggie" hidden>
+    <div class="menu-grid" id="panel-veggie" role="tabpanel" aria-labelledby="tab-veggie" data-cat="veggie" hidden>
       <div class="menu-item"><div><div class="mi-name">Veggie Sandwich</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Veggie Dürüm</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Vegetarischer Teller</div></div><div class="mi-price">9,00 €</div></div>
@@ -446,7 +539,7 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
       <div class="menu-item"><div><div class="mi-name">Falafel Dürüm</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Falafel Teller</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">9,00 €</div></div>
     </div>
-    <div class="menu-grid" data-cat="snacks" hidden>
+    <div class="menu-grid" id="panel-snacks" role="tabpanel" aria-labelledby="tab-snacks" data-cat="snacks" hidden>
       <div class="menu-item"><div><div class="mi-name">Hähnchenschnitzel Sandwich</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Hähnchenschnitzel</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">9,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Chicken Nuggets</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">8,50 €</div></div>
@@ -457,7 +550,7 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
       <div class="menu-item"><div><div class="mi-name">Rindswurst</div><div class="mi-desc">Im Brot 4,70 € / mit Pommes 8,50 €</div></div><div class="mi-price">ab 4,70 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Tagesmenü</div><div class="mi-desc">Mit Reis und Salat</div></div><div class="mi-price">10,00 €</div></div>
     </div>
-    <div class="menu-grid" data-cat="salate" hidden>
+    <div class="menu-grid" id="panel-salate" role="tabpanel" aria-labelledby="tab-salate" data-cat="salate" hidden>
       <div class="menu-item"><div><div class="mi-name">Linsensuppe</div><div class="mi-desc">Mercimek Çorbası</div></div><div class="mi-price">6,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Gemischter Salat</div><div class="mi-desc">Mit Weichkäse</div></div><div class="mi-price">7,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name">Thunfisch Salat</div><div class="mi-desc">Salat mit Thunfisch</div></div><div class="mi-price">8,00 €</div></div>
@@ -524,16 +617,16 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
       </div>
       <div class="rev-quotes reveal">
         <blockquote>
-          <p>"Ein echter Geheimtipp im Dornbusch. Das Fleisch ist super gewürzt und das Brot immer frisch."</p>
-          <footer>Melih K. · Google Rezension</footer>
+          <p>"Sehr nette Bedienung, frisches Fleisch und leckeres selbstgemachtes Brot."</p>
+          <footer>Google Rezension</footer>
         </blockquote>
         <blockquote>
-          <p>"Schneller, freundlicher Service und faire Preise. Die hausgemachten Soßen machen den Unterschied."</p>
-          <footer>Annika R. · Google Rezension</footer>
+          <p>"Hammer Pizza, Döner auch super, super Aromen, selten so gut gegessen."</p>
+          <footer>Google Rezension</footer>
         </blockquote>
         <blockquote>
-          <p>"Bester Döner auf der Eschersheimer. Auch die vegetarischen Sachen sind top."</p>
-          <footer>Jonas W. · Google Rezension</footer>
+          <p>"Preisleistung stimmt, die Größe war auch vollkommen in Ordnung."</p>
+          <footer>Google Rezension</footer>
         </blockquote>
       </div>
     </div>
@@ -565,6 +658,7 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
     </div>
   </div>
 </section>
+</main>
 
 <footer class="site">
   <div class="wrap foot-inner">
