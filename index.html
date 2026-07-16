@@ -21,6 +21,8 @@
 <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/6QH2ALVTTK7IRVO5MYOQQ3OZNXW5SSS3.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/7YY3ZAAE3TRV2LANYOLXNHTPHLXVWTKH.woff2">
 <link href="assets/fonts/fonts.css" rel="stylesheet">
 <script type="application/ld+json">
 {
@@ -126,6 +128,8 @@
   --red-deep:#7e1b12;
   --red-soft:rgba(179,40,26,.1);
   --line:rgba(34,27,18,.16);
+  --tafel:#171310;
+  --gold:#c9a24b;
   --radius:3px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -141,14 +145,14 @@ body{
   -webkit-font-smoothing:antialiased;
   position:relative;
 }
-h1,h2,h3,.display{font-family:"Cabinet Grotesk",system-ui,sans-serif;letter-spacing:-.01em;line-height:1.02;font-weight:800}
+h1,h2,h3,.display{font-family:"Cabinet Grotesk",system-ui,sans-serif;letter-spacing:-.01em;line-height:1.1;font-weight:800}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1240px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
 :focus-visible{outline:3px solid var(--red);outline-offset:2px}
 .skip-link{
   position:absolute;top:-100px;left:16px;z-index:200;
-  background:var(--red);color:var(--paper);font-weight:700;text-transform:uppercase;font-size:.85rem;letter-spacing:.03em;
+  background:var(--red);color:var(--paper);font-weight:600;text-transform:uppercase;font-size:.85rem;letter-spacing:.03em;
   padding:12px 20px;border-radius:var(--radius);border:2px solid var(--ink);transition:top .2s;
 }
 .skip-link:focus{top:16px}
@@ -169,7 +173,7 @@ nav{
 .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--red);transition:right .25s cubic-bezier(.16,1,.3,1)}
 .nav-links a:hover::after{right:0}
 .nav-cta{
-  background:var(--red);color:var(--paper);font-weight:700;font-size:.88rem;text-transform:uppercase;letter-spacing:.03em;
+  background:var(--red);color:var(--paper);font-weight:600;font-size:.88rem;text-transform:uppercase;letter-spacing:.03em;
   padding:11px 20px;border-radius:var(--radius);border:2px solid var(--ink);
   box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s;
 }
@@ -196,11 +200,16 @@ nav{
 .hero{min-height:100dvh;display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch;border-bottom:2px solid var(--ink)}
 .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:110px 6vw 60px calc(max((100vw - 1240px)/2, 24px));border-right:2px solid var(--ink);position:relative;z-index:2}
 .hero h1{font-size:clamp(2.6rem,5vw,4.4rem);margin-bottom:22px;text-wrap:balance}
-.hero h1 em{font-style:normal;color:var(--red);line-height:1.02;padding-bottom:4px;display:inline-block}
+.hero h1 em{font-style:normal;color:var(--red)}
 .hero p{color:var(--ink-2);max-width:40ch;margin-bottom:34px;font-size:1.05rem}
+.hero-status{
+  align-self:flex-start;border:2px solid var(--ink);border-radius:999px;
+  padding:7px 16px;font-size:.85rem;font-weight:600;margin-bottom:22px;background:var(--paper);
+}
+.hero-status .dot-open{color:var(--red)}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
 .btn-primary{
-  background:var(--red);color:var(--paper);font-weight:700;text-transform:uppercase;font-size:.9rem;letter-spacing:.03em;
+  background:var(--red);color:var(--paper);font-weight:600;text-transform:uppercase;font-size:.9rem;letter-spacing:.03em;
   padding:16px 30px;border-radius:var(--radius);border:2px solid var(--ink);white-space:nowrap;
   box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s;
 }
@@ -208,13 +217,13 @@ nav{
 .btn-primary:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
 .btn-ghost{
   border:2px solid var(--ink);color:var(--ink);padding:16px 30px;border-radius:var(--radius);white-space:nowrap;
-  font-weight:700;text-transform:uppercase;font-size:.9rem;letter-spacing:.03em;background:var(--paper);
+  font-weight:600;text-transform:uppercase;font-size:.9rem;letter-spacing:.03em;background:var(--paper);
   transition:background .2s,transform .15s;
 }
 .btn-ghost:hover{background:var(--bg-2)}
 .btn-ghost:active{transform:translate(1px,1px)}
 .hero-img{position:relative;overflow:hidden;background:var(--ink)}
-.hero-img img{width:100%;height:100%;object-fit:cover;filter:saturate(1.08) contrast(1.03)}
+.hero-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05) sepia(.08)}
 .hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(34,27,18,.35) 0%,transparent 35%);mix-blend-mode:multiply}
 @media(max-width:860px){
   .hero{grid-template-columns:1fr;min-height:auto}
@@ -227,7 +236,7 @@ nav{
 .strip-inner{display:grid;grid-template-columns:repeat(3,1fr);max-width:1240px;margin:0 auto}
 .strip-cell{padding:22px 24px;border-left:2px solid var(--ink)}
 .strip-cell:first-child{border-left:none}
-.strip-cell b{display:block;font-size:1.02rem;font-weight:700;margin-bottom:2px;text-transform:uppercase;letter-spacing:.01em}
+.strip-cell b{display:block;font-size:1.02rem;font-weight:600;margin-bottom:2px;text-transform:uppercase;letter-spacing:.01em}
 .strip-cell span{color:var(--ink-2);font-size:.88rem}
 .open-now{color:var(--red)}
 @media(max-width:700px){
@@ -239,7 +248,7 @@ nav{
 /* SECTIONS */
 section{padding:88px 0}
 .sec-head{margin-bottom:44px}
-.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem)}
+.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);text-wrap:balance}
 .sec-head p{color:var(--ink-2);max-width:52ch;margin-top:12px}
 
 /* MENU */
@@ -257,26 +266,36 @@ section{padding:88px 0}
 .menu-item + .menu-item{border-top:1px dashed var(--line)}
 .menu-grid > .menu-item:nth-child(2){border-top:none}
 .mi-name{font-weight:600}
+.mi-num{
+  font-family:"Cabinet Grotesk";font-weight:700;font-variant-numeric:tabular-nums;
+  color:var(--red);display:inline-block;min-width:2.6ch;margin-right:.35em;
+}
 .mi-desc{color:var(--ink-2);font-size:.87rem;margin-top:2px}
-.mi-price{font-family:"Cabinet Grotesk";font-weight:700;color:var(--red);font-size:1.08rem;white-space:nowrap}
+.mi-price{font-family:"Cabinet Grotesk";font-weight:700;color:var(--red);font-size:1.08rem;white-space:nowrap;font-variant-numeric:tabular-nums}
 .menu-note{margin-top:36px;color:var(--ink-2);font-size:.88rem}
 @media(max-width:760px){.menu-grid{grid-template-columns:1fr}.menu-grid > .menu-item:nth-child(2){border-top:1px dashed var(--line)}}
 
 /* FEATURE BAND */
 .band{position:relative;overflow:hidden;padding:0;border-bottom:2px solid var(--ink)}
-.band img{width:100%;height:520px;object-fit:cover;filter:saturate(1.05)}
+.band img{width:100%;height:520px;object-fit:cover;filter:saturate(.85) contrast(1.05) sepia(.08)}
 .band-overlay{
   position:absolute;inset:0;display:flex;align-items:flex-end;
   background:linear-gradient(0deg,rgba(20,15,9,.82) 0%,rgba(20,15,9,.1) 55%,transparent 100%);
 }
 .band-copy{max-width:1240px;margin:0 auto;padding:0 24px 60px;width:100%}
-.band-copy h2{font-size:clamp(1.7rem,3vw,2.4rem);max-width:22ch;color:#fbf5e8}
+.band-copy h2{font-size:clamp(1.7rem,3vw,2.4rem);max-width:22ch;color:#fbf5e8;text-wrap:balance}
 .band-copy p{color:#d8cbb4;max-width:46ch;margin-top:12px}
+.tafel-slogan{
+  display:inline-block;background:var(--tafel);color:var(--gold);
+  font-family:Georgia,"Iowan Old Style",serif;font-style:italic;font-size:1.02rem;
+  padding:9px 20px;border:1px solid rgba(201,162,75,.45);border-radius:var(--radius);
+  margin-bottom:18px;letter-spacing:.02em;
+}
 
 /* CARDS (Spezialitäten) */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--ink);border:2px solid var(--ink)}
 .duo-card{background:var(--paper);overflow:hidden}
-.duo-card img{height:300px;width:100%;object-fit:cover;filter:saturate(1.05)}
+.duo-card img{height:300px;width:100%;object-fit:cover;filter:saturate(.85) contrast(1.05) sepia(.08)}
 .duo-card .pad{padding:26px 28px 30px}
 .duo-card h3{font-size:1.3rem;margin-bottom:8px}
 .duo-card p{color:var(--ink-2);font-size:.95rem}
@@ -287,7 +306,11 @@ section{padding:88px 0}
 .rev-grid{display:grid;grid-template-columns:2fr 3fr;gap:64px;align-items:center}
 .rev-score{text-align:left}
 .rev-score .num{font-family:"Cabinet Grotesk";font-size:clamp(4rem,8vw,6.5rem);font-weight:800;color:var(--red);line-height:.95}
-.rev-score .stars{font-size:1.3rem;letter-spacing:4px;color:var(--red);margin:10px 0 6px}
+.rev-score .stars{
+  font-size:1.3rem;letter-spacing:4px;margin:10px 0 6px;
+  background:linear-gradient(90deg,var(--red) 92%,var(--line) 92%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
 .rev-score span{color:var(--ink-2);font-size:.92rem}
 .rev-quotes blockquote{padding:22px 0}
 .rev-quotes blockquote + blockquote{border-top:1px dashed var(--line)}
@@ -299,7 +322,7 @@ section{padding:88px 0}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px}
 .hours-table{width:100%;border-collapse:collapse;margin-top:20px}
 .hours-table td{padding:12px 0;border-bottom:1px dashed var(--line);color:var(--ink-2)}
-.hours-table td:last-child{text-align:right;color:var(--ink);font-weight:600}
+.hours-table td:last-child{text-align:right;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
 .contact-block{margin-top:20px}
 .contact-block a.big{
   display:block;font-family:"Cabinet Grotesk";font-size:1.4rem;font-weight:700;margin:6px 0;
@@ -313,6 +336,27 @@ section{padding:88px 0}
 /* FOOTER */
 footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);font-size:.85rem;background:var(--bg-2)}
 .foot-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* MOBILE STICKY BAR */
+.mobile-bar{display:none}
+@media(max-width:860px){
+  .mobile-bar{
+    display:flex;gap:10px;position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--paper);border-top:2px solid var(--ink);
+    padding:10px 16px;
+    padding-bottom:max(12px, env(safe-area-inset-bottom));
+    padding-left:max(16px, env(safe-area-inset-left));
+    padding-right:max(16px, env(safe-area-inset-right));
+  }
+  .mobile-bar a{
+    flex:1;text-align:center;padding:14px 10px;border-radius:var(--radius);
+    font-weight:600;text-transform:uppercase;font-size:.9rem;letter-spacing:.03em;
+    border:2px solid var(--ink);
+  }
+  .mobile-bar .mb-call{background:var(--red);color:var(--paper)}
+  .mobile-bar .mb-route{background:var(--paper);color:var(--ink)}
+  footer.site{padding-bottom:110px}
+}
 
 /* ===== Geräte-Anpassung ===== */
 /* Großer Desktop / 4K */
@@ -392,12 +436,12 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
 @keyframes intro-up{to{transform:translateY(0)}}
 .intro-tag{
   color:var(--ink-2);font-size:clamp(.95rem,2.4vw,1.2rem);letter-spacing:.04em;text-transform:uppercase;
-  opacity:0;animation:intro-fade .8s ease .9s forwards;
+  opacity:0;animation:intro-fade .6s ease .45s forwards;
 }
 @keyframes intro-fade{to{opacity:1}}
 .intro-line{
   width:0;height:3px;background:var(--red);border-radius:2px;
-  animation:intro-line .8s cubic-bezier(.16,1,.3,1) .55s forwards;
+  animation:intro-line .7s cubic-bezier(.16,1,.3,1) .3s forwards;
 }
 @keyframes intro-line{to{width:min(320px,60vw)}}
 @media (prefers-reduced-motion:reduce){#intro{display:none}}
@@ -405,9 +449,10 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
 .hero-copy > *{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .hero-img{opacity:0;transition:opacity 1s ease}
 body.intro-finished .hero-copy > *{opacity:1;transform:none}
-body.intro-finished .hero-copy > *:nth-child(1){transition-delay:.15s}
-body.intro-finished .hero-copy > *:nth-child(2){transition-delay:.3s}
-body.intro-finished .hero-copy > *:nth-child(3){transition-delay:.45s}
+body.intro-finished .hero-copy > *:nth-child(1){transition-delay:.1s}
+body.intro-finished .hero-copy > *:nth-child(2){transition-delay:.22s}
+body.intro-finished .hero-copy > *:nth-child(3){transition-delay:.34s}
+body.intro-finished .hero-copy > *:nth-child(4){transition-delay:.46s}
 body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
 @media (prefers-reduced-motion:reduce){
   .hero-copy > *,.hero-img{opacity:1;transform:none}
@@ -453,8 +498,9 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
 <main id="main">
 <header class="hero">
   <div class="hero-copy">
+    <p class="hero-status" id="hero-status">Mo bis Sa 10:00 bis 22:30 · So 12:00 bis 22:00</p>
     <h1>Frisch vom Spieß.<br>Mitten im <em>Dornbusch.</em></h1>
-    <p>Täglich frisch gegrillter Döner, hausgemachte Soßen und knuspriges Brot an der Eschersheimer Landstraße. Alles halal.</p>
+    <p>Täglich frisch gegrillter Döner, hausgemachte Soßen und knuspriges Brot an der Eschersheimer Landstraße. Alles halal, fast alles unter 10 Euro.</p>
     <div class="hero-ctas">
       <a href="#speisekarte" class="btn-primary">Zur Speisekarte</a>
       <a href="https://maps.google.com/?q=Döneria+Dornbusch,+Eschersheimer+Landstraße+322,+60320+Frankfurt" target="_blank" rel="noopener" class="btn-ghost">Route planen</a>
@@ -471,16 +517,16 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
 <div class="strip">
   <div class="strip-inner">
     <div class="strip-cell">
-      <b id="open-status" class="open-now">Jetzt geöffnet</b>
+      <b id="open-status">Öffnungszeiten</b>
       <span>Mo bis Sa 10:00 bis 22:30 · So 12:00 bis 22:00</span>
     </div>
     <div class="strip-cell">
       <b>4,6 von 5 Sternen</b>
-      <span>über 220 Google-Bewertungen</span>
+      <span><a href="https://maps.google.com/?q=Döneria+Dornbusch,+Eschersheimer+Landstraße+322,+60320+Frankfurt" target="_blank" rel="noopener" style="text-decoration:underline">226 Google-Bewertungen</a></span>
     </div>
     <div class="strip-cell">
-      <b>100% Halal</b>
-      <span>mit vegetarischen und veganen Optionen</span>
+      <b>Direkt an der U-Bahn</b>
+      <span>Fritz-Tarnow-Straße (U1, U2, U3, U8) vor der Tür</span>
     </div>
   </div>
 </div>
@@ -500,79 +546,80 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
       <button class="menu-tab" id="tab-salate" data-cat="salate" role="tab" aria-selected="false" aria-controls="panel-salate">Salate, Suppe &amp; Getränke</button>
     </div>
     <div class="menu-grid reveal" id="panel-doener" role="tabpanel" aria-labelledby="tab-doener" data-cat="doener">
-      <div class="menu-item"><div><div class="mi-name">Drehspieß Sandwich (Döner)</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">7,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Drehspieß Menü (Döner)</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">11,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Drehspieß Sandwich (Döner)</div><div class="mi-desc">Mit Fleisch, Pommes und Soße</div></div><div class="mi-price">7,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Drehspieß Sandwich (Döner)</div><div class="mi-desc">Mit Fleisch, Weichkäse, Salat und Soße</div></div><div class="mi-price">8,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Schüler Sandwich (Döner)</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">5,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Drehspieß Teller (Döner)</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">13,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Dürüm</div><div class="mi-desc">Mit Fleisch, Salat und Soße</div></div><div class="mi-price">8,30 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Dürüm Menü</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">12,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Box</div><div class="mi-desc">Mit Fleisch und Pommes, klein 5,50 € / groß 7,50 €</div></div><div class="mi-price">ab 5,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Extra Drehspießfleisch (Döner)</div></div><div class="mi-price">1,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Extra Weichkäse</div></div><div class="mi-price">0,80 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">01.</span>Drehspieß Sandwich (Döner)</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">7,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">02.</span>Drehspieß Menü (Döner)</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">11,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">03.</span>Drehspieß Sandwich (Döner)</div><div class="mi-desc">Mit Fleisch, Pommes und Soße</div></div><div class="mi-price">7,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">04.</span>Drehspieß Sandwich (Döner)</div><div class="mi-desc">Mit Fleisch, Weichkäse, Salat und Soße</div></div><div class="mi-price">8,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">05.</span>Schüler Sandwich (Döner)</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">5,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">06.</span>Drehspieß Teller (Döner)</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">13,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">07.</span>Dürüm</div><div class="mi-desc">Mit Fleisch, Salat und Soße</div></div><div class="mi-price">8,30 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">08.</span>Dürüm Menü</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">12,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">09.</span>Box</div><div class="mi-desc">Mit Fleisch und Pommes, klein 5,50 € / groß 7,50 €</div></div><div class="mi-price">ab 5,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num" aria-hidden="true"></span>Extra Drehspießfleisch (Döner)</div></div><div class="mi-price">1,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num" aria-hidden="true"></span>Extra Weichkäse</div></div><div class="mi-price">0,80 €</div></div>
     </div>
     <div class="menu-grid" id="panel-lahmacun" role="tabpanel" aria-labelledby="tab-lahmacun" data-cat="lahmacun" hidden>
-      <div class="menu-item"><div><div class="mi-name">Lahmacun</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">5,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Lahmacun</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Lahmacun</div><div class="mi-desc">Mit Fleisch, Salat und Soße</div></div><div class="mi-price">8,30 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Lahmacun Menü</div><div class="mi-desc">Mit Fleisch, Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">12,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Pide Hackfleisch</div><div class="mi-desc">Mit Hackfleisch</div></div><div class="mi-price">8,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Pide Spinat Käse</div><div class="mi-desc">Mit Spinat und Käse</div></div><div class="mi-price">8,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Pide Sucuk</div><div class="mi-desc">Mit türkischer Knoblauchwurst</div></div><div class="mi-price">8,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Pide mit Fleisch</div><div class="mi-desc">Mit Fleisch</div></div><div class="mi-price">9,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">11.</span>Lahmacun</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">5,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">12.</span>Lahmacun</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">13.</span>Lahmacun</div><div class="mi-desc">Mit Fleisch, Salat und Soße</div></div><div class="mi-price">8,30 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">14.</span>Lahmacun Menü</div><div class="mi-desc">Mit Fleisch, Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">12,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">15.</span>Pide Hackfleisch</div><div class="mi-desc">Mit Hackfleisch</div></div><div class="mi-price">8,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">16.</span>Pide Spinat Käse</div><div class="mi-desc">Mit Spinat und Käse</div></div><div class="mi-price">8,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">17.</span>Pide Sucuk</div><div class="mi-desc">Mit türkischer Knoblauchwurst</div></div><div class="mi-price">8,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">18.</span>Pide mit Fleisch</div><div class="mi-desc">Mit Fleisch</div></div><div class="mi-price">9,00 €</div></div>
     </div>
     <div class="menu-grid" id="panel-pizza" role="tabpanel" aria-labelledby="tab-pizza" data-cat="pizza" hidden>
-      <div class="menu-item"><div><div class="mi-name">Pizza Margherita</div><div class="mi-desc">Mit Tomatensoße und Käse</div></div><div class="mi-price">7,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Pizza Salami</div><div class="mi-desc">Mit Rindersalami</div></div><div class="mi-price">8,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Pizza Sucuk</div><div class="mi-desc">Mit türkischer Knoblauchwurst</div></div><div class="mi-price">9,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Pizza Vegetarisch</div><div class="mi-desc">Mit verschiedenen Gemüsen</div></div><div class="mi-price">9,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Pizza mit Fleisch</div><div class="mi-desc">Mit Fleisch und Soße</div></div><div class="mi-price">10,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Pizza Thunfisch</div><div class="mi-desc">Mit Thunfisch und Zwiebeln</div></div><div class="mi-price">10,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">19.</span>Pizza Margherita</div><div class="mi-desc">Mit Tomatensoße und Käse</div></div><div class="mi-price">7,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">20.</span>Pizza Salami</div><div class="mi-desc">Mit Rindersalami</div></div><div class="mi-price">8,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">21.</span>Pizza Sucuk</div><div class="mi-desc">Mit türkischer Knoblauchwurst</div></div><div class="mi-price">9,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">22.</span>Pizza Vegetarisch</div><div class="mi-desc">Mit verschiedenen Gemüsen</div></div><div class="mi-price">9,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">23.</span>Pizza mit Fleisch</div><div class="mi-desc">Mit Fleisch und Soße</div></div><div class="mi-price">10,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">24.</span>Pizza Thunfisch</div><div class="mi-desc">Mit Thunfisch und Zwiebeln</div></div><div class="mi-price">10,00 €</div></div>
     </div>
     <div class="menu-grid" id="panel-veggie" role="tabpanel" aria-labelledby="tab-veggie" data-cat="veggie" hidden>
-      <div class="menu-item"><div><div class="mi-name">Veggie Sandwich</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Veggie Dürüm</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Vegetarischer Teller</div></div><div class="mi-price">9,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Falafel Sandwich</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Falafel Menü</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">10,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Falafel Dürüm</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Falafel Teller</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">9,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">28.</span>Veggie Sandwich</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">29.</span>Veggie Dürüm</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">30.</span>Vegetarischer Teller</div></div><div class="mi-price">9,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">31.</span>Falafel Sandwich</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">32.</span>Falafel Menü</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">10,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">33.</span>Falafel Dürüm</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">34.</span>Falafel Teller</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">9,00 €</div></div>
     </div>
     <div class="menu-grid" id="panel-snacks" role="tabpanel" aria-labelledby="tab-snacks" data-cat="snacks" hidden>
-      <div class="menu-item"><div><div class="mi-name">Hähnchenschnitzel Sandwich</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Hähnchenschnitzel</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">9,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Chicken Nuggets</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">8,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Sucuk Sandwich</div><div class="mi-desc">Mit türkischer Knoblauchwurst und Salat</div></div><div class="mi-price">6,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Sucuk Menü</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">10,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Zigarren Börek</div><div class="mi-desc">5 Stück</div></div><div class="mi-price">5,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Pommes</div><div class="mi-desc">Mit Ketchup oder Mayo</div></div><div class="mi-price">4,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Rindswurst</div><div class="mi-desc">Im Brot 4,70 € / mit Pommes 8,50 €</div></div><div class="mi-price">ab 4,70 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Tagesmenü</div><div class="mi-desc">Mit Reis und Salat</div></div><div class="mi-price">10,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">25.</span>Hähnchenschnitzel Sandwich</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">26.</span>Hähnchenschnitzel</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">9,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">27.</span>Chicken Nuggets</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">8,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">35.</span>Sucuk Sandwich</div><div class="mi-desc">Mit türkischer Knoblauchwurst und Salat</div></div><div class="mi-price">6,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">36.</span>Sucuk Menü</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">10,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">37.</span>Zigarren Börek</div><div class="mi-desc">5 Stück</div></div><div class="mi-price">5,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">38.</span>Pommes</div><div class="mi-desc">Mit Ketchup oder Mayo</div></div><div class="mi-price">4,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">39.</span>Rindswurst</div><div class="mi-desc">Frankfurter Klassiker, im Brot 4,70 € / mit Pommes 8,50 €</div></div><div class="mi-price">ab 4,70 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num" aria-hidden="true"></span>Tagesmenü</div><div class="mi-desc">Mit Reis und Salat</div></div><div class="mi-price">10,00 €</div></div>
     </div>
     <div class="menu-grid" id="panel-salate" role="tabpanel" aria-labelledby="tab-salate" data-cat="salate" hidden>
-      <div class="menu-item"><div><div class="mi-name">Linsensuppe</div><div class="mi-desc">Mercimek Çorbası</div></div><div class="mi-price">6,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Gemischter Salat</div><div class="mi-desc">Mit Weichkäse</div></div><div class="mi-price">7,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Thunfisch Salat</div><div class="mi-desc">Salat mit Thunfisch</div></div><div class="mi-price">8,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Drehspieß Salat</div><div class="mi-desc">Salat mit Fleisch</div></div><div class="mi-price">8,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Baklava</div><div class="mi-desc">5 Stück</div></div><div class="mi-price">4,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Kalte Getränke</div></div><div class="mi-price">2,50 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Kaffee</div></div><div class="mi-price">2,00 €</div></div>
-      <div class="menu-item"><div><div class="mi-name">Tee</div></div><div class="mi-price">2,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">10.</span>Linsensuppe</div><div class="mi-desc">Mercimek Çorbası</div></div><div class="mi-price">6,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">40.</span>Gemischter Salat</div><div class="mi-desc">Mit Weichkäse</div></div><div class="mi-price">7,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">41.</span>Thunfisch Salat</div><div class="mi-desc">Salat mit Thunfisch</div></div><div class="mi-price">8,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">42.</span>Drehspieß Salat</div><div class="mi-desc">Salat mit Fleisch</div></div><div class="mi-price">8,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num">43.</span>Baklava</div><div class="mi-desc">5 Stück</div></div><div class="mi-price">4,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num" aria-hidden="true"></span>Kalte Getränke</div></div><div class="mi-price">2,50 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num" aria-hidden="true"></span>Kaffee</div></div><div class="mi-price">2,00 €</div></div>
+      <div class="menu-item"><div><div class="mi-name"><span class="mi-num" aria-hidden="true"></span>Tee</div></div><div class="mi-price">2,00 €</div></div>
     </div>
-    <p class="menu-note">Preise laut Aushang. Alle Gerichte auch zum Mitnehmen. Bei Allergien sprich uns einfach an.</p>
+    <p class="menu-note">Bestell einfach nach Nummer, genau wie an unserer Tafel. Preise laut Aushang, alle Gerichte auch zum Mitnehmen. Bei Allergien sprich uns einfach an.</p>
   </div>
 </section>
 
 <section class="band" id="ueber">
   <picture>
     <source type="image/webp" srcset="assets/grill-480.webp 480w, assets/grill-900.webp 900w, assets/grill-1600.webp 1600w" sizes="100vw">
-    <img src="assets/grill-1600.jpg" width="1600" height="1066" alt="Döner-Spieß am Grill in der Döneria Dornbusch" loading="lazy">
+    <img src="assets/grill-1600.jpg" width="1600" height="1066" alt="Döner-Spieß am Grill" loading="lazy">
   </picture>
   <div class="band-overlay">
     <div class="band-copy">
+      <p class="tafel-slogan">Einmal essen … nicht vergessen</p>
       <h2>Jeden Morgen frisch aufgesetzt</h2>
-      <p>Unser Spieß dreht sich vom ersten Kunden bis zum letzten. Knusprig angegrillt, dünn geschnitten, direkt ins frische Brot. So einfach ist gutes Essen.</p>
+      <p>Unser Spieß dreht sich vom ersten Kunden bis zum letzten. Knusprig angegrillt, dünn geschnitten, direkt ins frische Brot. Drinnen isst du mit Blick auf die Frankfurter Skyline an der Wand.</p>
     </div>
   </div>
 </section>
@@ -612,21 +659,21 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
     <div class="rev-grid">
       <div class="rev-score reveal">
         <div class="num">4,6</div>
-        <div class="stars">★★★★★</div>
-        <span>aus über 220 Google-Bewertungen</span>
+        <div class="stars" aria-label="4,6 von 5 Sternen">★★★★★</div>
+        <span><a href="https://maps.google.com/?q=Döneria+Dornbusch,+Eschersheimer+Landstraße+322,+60320+Frankfurt" target="_blank" rel="noopener" style="text-decoration:underline">aus 226 Google-Bewertungen</a></span>
       </div>
       <div class="rev-quotes reveal">
         <blockquote>
-          <p>"Sehr nette Bedienung, frisches Fleisch und leckeres selbstgemachtes Brot."</p>
-          <footer>Google Rezension</footer>
+          <p>„Sehr nette Bedienung, frisches Fleisch und leckeres selbstgemachtes Brot."</p>
+          <footer>Google Rezension, 2026</footer>
         </blockquote>
         <blockquote>
-          <p>"Hammer Pizza, Döner auch super, super Aromen, selten so gut gegessen."</p>
-          <footer>Google Rezension</footer>
+          <p>„Hammer Pizza, Döner auch super, super Aromen, selten so gut gegessen."</p>
+          <footer>Google Rezension, 2026</footer>
         </blockquote>
         <blockquote>
-          <p>"Preisleistung stimmt, die Größe war auch vollkommen in Ordnung."</p>
-          <footer>Google Rezension</footer>
+          <p>„Preisleistung stimmt, die Größe war auch vollkommen in Ordnung."</p>
+          <footer>Google Rezension, 2026</footer>
         </blockquote>
       </div>
     </div>
@@ -663,9 +710,15 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
 <footer class="site">
   <div class="wrap foot-inner">
     <span>© 2026 Döneria Dornbusch, Frankfurt am Main</span>
+    <span style="font-style:italic">Einmal essen … nicht vergessen</span>
     <span>Alle Gerichte halal · <a href="impressum.html" style="color:inherit;text-decoration:underline">Impressum</a> · <a href="datenschutz.html" style="color:inherit;text-decoration:underline">Datenschutz</a></span>
   </div>
 </footer>
+
+<div class="mobile-bar">
+  <a class="mb-call" href="tel:+496996865511">Anrufen</a>
+  <a class="mb-route" href="https://maps.google.com/?q=Döneria+Dornbusch,+Eschersheimer+Landstraße+322,+60320+Frankfurt" target="_blank" rel="noopener">Route</a>
+</div>
 
 <script>
 // Speisekarte: alle Gerichte stehen bereits als statisches HTML in jedem
@@ -683,14 +736,27 @@ document.querySelectorAll(".menu-tab").forEach(btn=>{
   });
 });
 
-// Öffnungsstatus live
+// Öffnungsstatus live (Strip + Hero-Pill). Ohne JS bleibt der neutrale
+// Öffnungszeiten-Text stehen, es wird also nie fälschlich "geöffnet" angezeigt.
 (function(){
-  const el = document.getElementById("open-status");
+  const strip = document.getElementById("open-status");
+  const hero = document.getElementById("hero-status");
   const now = new Date();
-  const day = now.getDay(); // 0 = Sonntag
+  const sunday = now.getDay() === 0;
   const mins = now.getHours()*60 + now.getMinutes();
-  const open = day === 0 ? (mins >= 720 && mins < 1320) : (mins >= 600 && mins < 1350);
-  if(!open){ el.textContent = "Gerade geschlossen"; el.style.color = "var(--ink-2)"; }
+  const openMin = sunday ? 720 : 600;
+  const closeMin = sunday ? 1320 : 1350;
+  const openTxt = sunday ? "12:00" : "10:00";
+  const closeTxt = sunday ? "22:00" : "22:30";
+  const isOpen = mins >= openMin && mins < closeMin;
+  const label = isOpen
+    ? "Jetzt geöffnet · bis " + closeTxt
+    : "Gerade geschlossen · öffnet um " + openTxt;
+  strip.textContent = label;
+  strip.classList.toggle("open-now", isOpen);
+  hero.innerHTML = isOpen
+    ? '<span class="dot-open">●</span> ' + label
+    : label;
 })();
 
 // Animiertes Intro
@@ -700,7 +766,8 @@ document.querySelectorAll(".menu-tab").forEach(btn=>{
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let seen = false;
   try { seen = sessionStorage.getItem("introSeen") === "1"; } catch(e) {}
-  if(reduce || seen){
+  // Deep-Links (z.B. #speisekarte aus Google) überspringen das Intro komplett
+  if(reduce || seen || location.hash){
     intro.classList.add("removed");
     document.body.classList.add("intro-finished");
     return;
@@ -708,15 +775,20 @@ document.querySelectorAll(".menu-tab").forEach(btn=>{
   try { sessionStorage.setItem("introSeen", "1"); } catch(e) {}
   const letters = "Döneria";
   word.innerHTML = [...letters].map((ch,i)=>
-    `<span class="${i===1?"acc":""}" style="animation-delay:${.08*i+.1}s">${ch}</span>`
+    `<span class="${i===1?"acc":""}" style="animation-delay:${.04*i+.06}s">${ch}</span>`
   ).join("");
   document.body.style.overflow = "hidden";
-  setTimeout(()=>{
+  let finished = false;
+  function finish(){
+    if(finished) return;
+    finished = true;
     intro.classList.add("done");
     document.body.classList.add("intro-finished");
     document.body.style.overflow = "";
     setTimeout(()=>intro.classList.add("removed"), 950);
-  }, 2100);
+  }
+  setTimeout(finish, 1100);
+  intro.addEventListener("click", finish, {once:true});
   // Zurück-Navigation aus dem Browser-Cache: Intro nie erneut zeigen
   window.addEventListener("pageshow", e=>{
     if(e.persisted){
