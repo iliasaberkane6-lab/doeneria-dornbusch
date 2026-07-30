@@ -9,13 +9,15 @@
 <meta property="og:type" content="restaurant.restaurant">
 <meta property="og:title" content="Döneria Dornbusch · Frankfurt">
 <meta property="og:description" content="Frischer Döner, Dürüm und Falafel im Dornbusch. 4,6 Sterne. Halal.">
-<meta property="og:image" content="https://iliasaberkane6-lab.github.io/doeneria-dornbusch/assets/hero-1600.jpg">
+<meta property="og:image" content="https://iliasaberkane6-lab.github.io/doeneria-dornbusch/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:url" content="https://iliasaberkane6-lab.github.io/doeneria-dornbusch/">
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Döneria Dornbusch · Frankfurt">
 <meta name="twitter:description" content="Frischer Döner, Dürüm und Falafel im Dornbusch. 4,6 Sterne. Halal.">
-<meta name="twitter:image" content="https://iliasaberkane6-lab.github.io/doeneria-dornbusch/assets/hero-1600.jpg">
+<meta name="twitter:image" content="https://iliasaberkane6-lab.github.io/doeneria-dornbusch/assets/og-image.png">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
@@ -277,7 +279,7 @@ section{padding:88px 0}
 
 /* FEATURE BAND */
 .band{position:relative;overflow:hidden;padding:0;border-bottom:2px solid var(--ink)}
-.band img{width:100%;height:520px;object-fit:cover;filter:saturate(.85) contrast(1.05) sepia(.08)}
+.band > picture img{width:100%;height:520px;object-fit:cover;filter:saturate(.85) contrast(1.05) sepia(.08)}
 .band-overlay{
   position:absolute;inset:0;display:flex;align-items:flex-end;
   background:linear-gradient(0deg,rgba(20,15,9,.82) 0%,rgba(20,15,9,.1) 55%,transparent 100%);
@@ -285,12 +287,7 @@ section{padding:88px 0}
 .band-copy{max-width:1240px;margin:0 auto;padding:0 24px 60px;width:100%}
 .band-copy h2{font-size:clamp(1.7rem,3vw,2.4rem);max-width:22ch;color:#fbf5e8;text-wrap:balance}
 .band-copy p{color:#d8cbb4;max-width:46ch;margin-top:12px}
-.tafel-slogan{
-  display:inline-block;background:var(--tafel);color:var(--gold);
-  font-family:Georgia,"Iowan Old Style",serif;font-style:italic;font-size:1.02rem;
-  padding:9px 20px;border:1px solid rgba(201,162,75,.45);border-radius:var(--radius);
-  margin-bottom:18px;letter-spacing:.02em;
-}
+.tafel-schild{display:block;width:min(340px,62vw);height:auto;margin-bottom:20px}
 
 /* CARDS (Spezialitäten) */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--ink);border:2px solid var(--ink)}
@@ -373,7 +370,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
 /* Tablet (iPad hoch) */
 @media(max-width:1024px){
   .contact-grid,.rev-grid{gap:40px}
-  .band img{height:420px}
+  .band > picture img{height:420px}
 }
 /* Phone */
 @media(max-width:600px){
@@ -386,7 +383,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
   .btn-primary,.btn-ghost,.map-cta{text-align:center;width:100%;padding:16px 24px}
   .menu-tabs{gap:8px}
   .menu-tab{padding:10px 16px;font-size:.88rem;min-height:44px}
-  .band img{height:340px}
+  .band > picture img{height:340px}
   .band-copy{padding:0 18px 40px}
   .duo-card img{height:220px}
   .rev-score .num{font-size:4.2rem}
@@ -617,7 +614,7 @@ body.intro-finished .hero-img{opacity:1;transition-delay:.2s}
   </picture>
   <div class="band-overlay">
     <div class="band-copy">
-      <p class="tafel-slogan">Einmal essen … nicht vergessen</p>
+      <img class="tafel-schild" src="assets/wordmark.svg" width="820" height="300" alt="Döneria. Einmal essen, nicht vergessen." loading="lazy">
       <h2>Jeden Morgen frisch aufgesetzt</h2>
       <p>Unser Spieß dreht sich vom ersten Kunden bis zum letzten. Knusprig angegrillt, dünn geschnitten, direkt ins frische Brot. Drinnen isst du mit Blick auf die Frankfurter Skyline an der Wand.</p>
     </div>
