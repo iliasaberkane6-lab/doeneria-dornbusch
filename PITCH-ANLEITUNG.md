@@ -37,7 +37,10 @@ Essen, das sieht dann noch besser aus. Und die Preise habe ich von Ihrer
 Tafel abgelesen, die sollten wir einmal kurz zusammen durchgehen."
 
 ### 6. Preis (erst nennen, wenn ER nach dem Preis fragt)
-- Einmalig: 400 bis 600 Euro (verhandelbar, unter 300 nicht runtergehen)
+- Einstieg: 600 Euro nennen, Verhandlungsziel 450 bis 500, unter 400 nie
+  (wer 450 aufruft, geht mit 350 raus; wer 600 aufruft, landet bei 450 bis 500)
+- Statt Rabatt: Leistung rausnehmen ("Für 350 ohne Foto-Bearbeitung und ohne
+  Google-Profil-Pflege") oder 2 Raten anbieten (300 bei Zusage, 300 bei Livegang)
 - Laufend: "Domain und Hosting kosten etwa 30 Euro im Jahr, die buche ich
   für Sie. Wenn sich Preise oder Öffnungszeiten ändern, ändere ich das
   für 10 Euro im Monat, oder Sie melden sich einfach bei Bedarf."

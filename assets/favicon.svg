@@ -1,4 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="10" fill="#221b12"/>
-  <text x="32" y="45" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="36" fill="#b3281a" text-anchor="middle">D</text>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c877"/>
+      <stop offset="50%" stop-color="#c9a24b"/>
+      <stop offset="100%" stop-color="#a87f2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="10" fill="#171310"/>
+  <path d="M1347 1273Q1477 1188 1557.0 1046.5Q1637 905 1637 700Q1637 520 1565.5 386.5Q1494 253 1376 168Q1256 83 1103.5 41.5Q951 0 784 0H69V78Q101 79 149.0 84.0Q197 89 213 96Q249 111 263.0 136.5Q277 162 277 198V1204Q277 1238 264.0 1265.5Q251 1293 213 1310Q175 1327 132.5 1333.0Q90 1339 67 1341V1419H822Q943 1419 1081.0 1388.0Q1219 1357 1347 1273ZM1143 256Q1192 336 1214.5 446.5Q1237 557 1237 701Q1237 842 1207.0 958.0Q1177 1074 1119 1156Q1061 1238 974.5 1283.0Q888 1328 778 1328Q743 1328 698.5 1326.5Q654 1325 632 1324V247Q632 211 641.5 183.5Q651 156 674 135Q697 114 730.5 102.5Q764 91 818 91Q931 91 1012.0 133.0Q1093 175 1143 256Z" transform="translate(5.58 54.00) scale(0.03101 -0.03101)" fill="url(#g)"/>
 </svg>
