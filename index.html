@@ -216,6 +216,7 @@ section{padding:88px 0;scroll-margin-top:72px}
 }
 .menu-tab:hover{color:var(--ink)}
 .menu-tab.active{color:var(--red);border-bottom-color:var(--red)}
+.menu-panel-title,.print-brand,.print-contact{display:none}
 .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
 .menu-grid[hidden]{display:none}
 .menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:17px 0}
@@ -363,7 +364,42 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
   .nav-links a,.menu-tab{min-height:44px}
 }
 
+/* Vollständige, ruhige Speisekarte für Ausdruck oder PDF-Export */
+@media print{
+  @page{margin:12mm}
+  body{background:#fff;color:#000;font-size:10pt;line-height:1.35}
+  nav,.mobile-menu,.hero,.strip,.menu-tabs,.local-proof,.reviews,#kontakt,footer.site,.mobile-bar{display:none!important}
+  #speisekarte{display:block!important;padding:0;scroll-margin-top:0}
+  #speisekarte .wrap{max-width:none;padding:0}
+  .print-brand{display:flex;justify-content:space-between;gap:20px;align-items:baseline;border-bottom:2px solid #000;padding-bottom:8px;margin-bottom:22px}
+  .print-brand strong{font-family:"Cabinet Grotesk",system-ui,sans-serif;font-size:18pt}
+  .print-brand span{font-size:9pt}
+  .sec-head{margin-bottom:18px}
+  .sec-head h2{font-size:16pt}
+  .sec-head p{margin-top:5px;color:#333}
+  .menu-panel-title{display:block;margin:18px 0 4px;font-size:12pt;break-after:avoid}
+  .menu-grid,.menu-grid[hidden]{display:grid!important;grid-template-columns:1fr 1fr;gap:0 24px}
+  .menu-item{padding:6px 0;break-inside:avoid}
+  .mi-num,.mi-price{color:#000}
+  .mi-desc,.menu-note{color:#333}
+  .menu-note{margin-top:18px}
+  .print-contact{display:block;border-top:2px solid #000;margin-top:18px;padding-top:8px;font-size:9pt}
+}
+
 </style>
+<noscript>
+<style>
+  .menu-tabs{display:none!important}
+  .menu-panel-title{display:block!important;margin:34px 0 8px;font-size:1.25rem}
+  .menu-grid[hidden]{display:grid!important}
+  @media(max-width:860px){
+    nav{position:static!important}
+    .burger{display:none!important}
+    .mobile-menu{display:block!important;position:static!important}
+    .hero-copy{padding-top:48px!important}
+  }
+</style>
+</noscript>
 </head>
 <body>
 
@@ -382,7 +418,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
     <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">☰</button>
   </div>
 </nav>
-<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+<div class="mobile-menu" id="mobile-menu">
   <a href="#speisekarte">Speisekarte</a>
   <a href="#ueber">Vor Ort</a>
   <a href="#bewertungen">Bewertungen</a>
@@ -390,7 +426,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
   <a href="tel:+496996865511" class="mobile-phone-link">Anrufen: 069 96865511</a>
 </div>
 
-<main id="main">
+<main id="main" tabindex="-1">
 <header class="hero">
   <div class="hero-copy">
     <p class="hero-status" id="hero-status">Mo bis Sa 10:00 bis 22:30 · So 12:00 bis 22:00</p>
@@ -429,10 +465,15 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
 
 <section id="speisekarte">
   <div class="wrap">
+    <div class="print-brand">
+      <strong>Döneria Dornbusch</strong>
+      <span>Eschersheimer Landstraße 322 · 60320 Frankfurt am Main · 069 96865511</span>
+    </div>
     <div class="sec-head">
       <h2>Speisekarte</h2>
       <p>49 Positionen. Dieselben Nummern wie an der Tafel – von Drehspieß und Dürüm bis Pizza, Falafel und Linsensuppe.</p>
     </div>
+    <noscript><p class="menu-note">JavaScript ist deaktiviert. Deshalb stehen alle Kategorien vollständig untereinander.</p></noscript>
     <div class="menu-tabs" role="tablist" aria-label="Kategorien der Speisekarte">
       <button class="menu-tab active" id="tab-doener" data-cat="doener" role="tab" aria-selected="true" aria-controls="panel-doener" tabindex="0">Döner &amp; Dürüm</button>
       <button class="menu-tab" id="tab-lahmacun" data-cat="lahmacun" role="tab" aria-selected="false" aria-controls="panel-lahmacun" tabindex="-1">Lahmacun &amp; Pide</button>
@@ -441,6 +482,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
       <button class="menu-tab" id="tab-snacks" data-cat="snacks" role="tab" aria-selected="false" aria-controls="panel-snacks" tabindex="-1">Schnitzel &amp; Snacks</button>
       <button class="menu-tab" id="tab-salate" data-cat="salate" role="tab" aria-selected="false" aria-controls="panel-salate" tabindex="-1">Salate, Suppe &amp; Getränke</button>
     </div>
+    <h3 class="menu-panel-title">Döner &amp; Dürüm</h3>
     <div class="menu-grid" id="panel-doener" role="tabpanel" aria-labelledby="tab-doener" data-cat="doener" tabindex="0">
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">01.</span>Drehspieß Sandwich (Döner)</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">7,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">02.</span>Drehspieß Menü (Döner)</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">11,00 €</div></div>
@@ -454,6 +496,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num" aria-hidden="true"></span>Extra Drehspießfleisch (Döner)</div></div><div class="mi-price">1,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num" aria-hidden="true"></span>Extra Weichkäse</div></div><div class="mi-price">0,80 €</div></div>
     </div>
+    <h3 class="menu-panel-title">Lahmacun &amp; Pide</h3>
     <div class="menu-grid" id="panel-lahmacun" role="tabpanel" aria-labelledby="tab-lahmacun" data-cat="lahmacun" tabindex="0" hidden>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">11.</span>Lahmacun</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">5,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">12.</span>Lahmacun</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
@@ -464,6 +507,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">17.</span>Pide Sucuk</div><div class="mi-desc">Mit türkischer Knoblauchwurst</div></div><div class="mi-price">8,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">18.</span>Pide mit Fleisch</div><div class="mi-desc">Mit Fleisch</div></div><div class="mi-price">9,00 €</div></div>
     </div>
+    <h3 class="menu-panel-title">Pizza</h3>
     <div class="menu-grid" id="panel-pizza" role="tabpanel" aria-labelledby="tab-pizza" data-cat="pizza" tabindex="0" hidden>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">19.</span>Pizza Margherita</div><div class="mi-desc">Mit Tomatensoße und Käse</div></div><div class="mi-price">7,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">20.</span>Pizza Salami</div><div class="mi-desc">Mit Rindersalami</div></div><div class="mi-price">8,50 €</div></div>
@@ -472,6 +516,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">23.</span>Pizza mit Fleisch</div><div class="mi-desc">Mit Fleisch und Soße</div></div><div class="mi-price">10,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">24.</span>Pizza Thunfisch</div><div class="mi-desc">Mit Thunfisch und Zwiebeln</div></div><div class="mi-price">10,00 €</div></div>
     </div>
+    <h3 class="menu-panel-title">Vegetarisch &amp; Falafel</h3>
     <div class="menu-grid" id="panel-veggie" role="tabpanel" aria-labelledby="tab-veggie" data-cat="veggie" tabindex="0" hidden>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">28.</span>Veggie Sandwich</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">29.</span>Veggie Dürüm</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,50 €</div></div>
@@ -481,6 +526,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">33.</span>Falafel Dürüm</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">34.</span>Falafel Teller</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">9,00 €</div></div>
     </div>
+    <h3 class="menu-panel-title">Schnitzel &amp; Snacks</h3>
     <div class="menu-grid" id="panel-snacks" role="tabpanel" aria-labelledby="tab-snacks" data-cat="snacks" tabindex="0" hidden>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">25.</span>Hähnchenschnitzel Sandwich</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">26.</span>Hähnchenschnitzel</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">9,00 €</div></div>
@@ -492,6 +538,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">39.</span>Rindswurst</div><div class="mi-desc">Frankfurter Klassiker, im Brot 4,70 € / mit Pommes 8,50 €</div></div><div class="mi-price">ab 4,70 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num" aria-hidden="true"></span>Tagesmenü</div><div class="mi-desc">Mit Reis und Salat</div></div><div class="mi-price">10,00 €</div></div>
     </div>
+    <h3 class="menu-panel-title">Salate, Suppe &amp; Getränke</h3>
     <div class="menu-grid" id="panel-salate" role="tabpanel" aria-labelledby="tab-salate" data-cat="salate" tabindex="0" hidden>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">10.</span>Linsensuppe</div><div class="mi-desc">Mercimek Çorbası</div></div><div class="mi-price">6,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">40.</span>Gemischter Salat</div><div class="mi-desc">Mit Weichkäse</div></div><div class="mi-price">7,00 €</div></div>
@@ -503,6 +550,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num" aria-hidden="true"></span>Tee</div></div><div class="mi-price">2,00 €</div></div>
     </div>
     <p class="menu-note">Bestell einfach nach Nummer, genau wie an der Tafel. Preise laut zuletzt veröffentlichtem Aushang; Änderungen im Laden sind möglich. Alle Gerichte auch zum Mitnehmen. Bei Allergien frag bitte vor der Bestellung nach.</p>
+    <div class="print-contact">Öffnungszeiten: Mo–Sa 10:00–22:30 · So 12:00–22:00 · Essen vor Ort und zum Mitnehmen</div>
   </div>
 </section>
 
