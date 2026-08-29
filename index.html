@@ -141,18 +141,39 @@ nav{
   .nav-cta{display:none}
 }
 
-/* HERO */
-.hero{min-height:100dvh;display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch;border-bottom:2px solid var(--ink)}
-.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:110px 6vw 60px calc(max((100vw - 1240px)/2, 24px));border-right:2px solid var(--ink);position:relative;z-index:2}
-.hero h1{font-size:clamp(2.6rem,5vw,4.4rem);margin-bottom:22px;text-wrap:balance}
-.hero h1 em{font-style:normal;color:var(--red)}
-.hero p{color:var(--ink-2);max-width:40ch;margin-bottom:34px;font-size:1.05rem}
+/* HERO — vom echten schwarz-goldenen Aushang abgeleitet */
+.hero{padding-top:72px;border-bottom:2px solid var(--ink);background:var(--bg)}
+.hero-board{background:var(--tafel);color:var(--gold);padding:32px 24px 36px;min-height:520px;min-height:56svh;display:flex}
+.hero-board-inner{
+  width:min(1240px,100%);margin:auto;border:1px solid rgba(201,162,75,.46);
+  padding:24px 30px 26px;display:flex;flex-direction:column;min-height:452px;min-height:calc(56svh - 68px);
+}
+.hero-board-top,.hero-board-foot{display:flex;justify-content:space-between;gap:24px;align-items:center}
+.hero-board-top{color:#d8cbb4;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em}
+.hero-place{white-space:nowrap}
 .hero-status{
-  align-self:flex-start;border:2px solid var(--ink);border-radius:var(--radius);
-  padding:7px 16px;font-size:.85rem;font-weight:600;margin-bottom:22px;background:var(--paper);
+  border:1px solid rgba(201,162,75,.55);border-radius:var(--radius);padding:7px 12px;
+  color:#d8cbb4;font-size:.78rem;font-weight:600;letter-spacing:.03em;text-transform:none;
 }
 .hero-status .dot-open{color:var(--red)}
-.hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
+.hero-mark{flex:1;display:flex;align-items:center;justify-content:center;padding:28px 0 32px}
+.hero-mark img{width:min(900px,88%);height:auto}
+.hero-board-foot{border-top:1px solid rgba(201,162,75,.5);padding-top:18px;color:#d8cbb4}
+.hero-board-address span{display:block;color:var(--gold);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:2px}
+.hero-board-address strong{font-size:.9rem;text-transform:uppercase;letter-spacing:.04em}
+.hero-lines{display:flex;align-items:center;justify-content:flex-end;gap:7px;flex-wrap:wrap}
+.hero-lines span:not(.hero-station){display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:28px;border:1px solid var(--gold);color:var(--gold);font-size:.73rem;font-weight:700}
+.hero-station{margin-left:7px;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.hero-utility{background:var(--bg)}
+.hero-utility-inner{max-width:1240px;margin:0 auto;padding:42px 24px 46px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:72px;align-items:center}
+.hero-kicker{color:var(--red);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+.hero h1{font-size:clamp(2.6rem,5vw,4.65rem);margin-bottom:18px;text-wrap:balance;line-height:.98}
+.hero h1 span{color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero-copy > p:last-child{color:var(--ink-2);max-width:56ch;font-size:1.02rem}
+.hero-actions{display:flex;flex-direction:column;align-items:flex-end;gap:18px}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end}
+.hero-action-note{color:var(--ink-2);font-size:.82rem;text-align:right;text-transform:uppercase;letter-spacing:.04em}
 .btn-primary{
   background:var(--red);color:var(--paper);font-weight:600;text-transform:uppercase;font-size:.9rem;letter-spacing:.03em;
   padding:16px 30px;border-radius:var(--radius);border:2px solid var(--ink);white-space:nowrap;
@@ -167,23 +188,16 @@ nav{
 }
 .btn-ghost:hover{background:var(--bg-2)}
 .btn-ghost:active{transform:translate(1px,1px)}
-.hero-brand{
-  position:relative;overflow:hidden;background:var(--tafel);color:var(--gold);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:120px clamp(40px,6vw,88px) 64px;
-}
-.hero-brand::before{content:"";position:absolute;inset:104px 34px 34px;border:1px solid rgba(201,162,75,.44);pointer-events:none}
-.hero-brand img{position:relative;width:min(520px,86%);height:auto}
-.hero-brand-meta{
-  position:relative;width:min(520px,86%);margin-top:38px;padding-top:18px;
-  border-top:1px solid rgba(201,162,75,.5);display:flex;justify-content:space-between;gap:20px;
-  color:#d8cbb4;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;
-}
 @media(max-width:860px){
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-copy{padding:110px 24px 40px;border-right:none;border-bottom:2px solid var(--ink)}
-  .hero-brand{min-height:360px;padding:64px 24px 52px}
-  .hero-brand::before{inset:24px}
+  .hero-board{min-height:440px;padding:18px}
+  .hero-board-inner{min-height:404px;padding:18px}
+  .hero-mark{padding:26px 0}
+  .hero-mark img{width:min(700px,100%)}
+  .hero-board-foot{align-items:flex-end}
+  .hero-lines{max-width:210px}
+  .hero-station{width:100%;margin:3px 0 0;text-align:right}
+  .hero-utility-inner{grid-template-columns:1fr;gap:28px;padding:34px 24px 40px}
+  .hero-actions{display:none}
 }
 
 /* STATUS STRIP */
@@ -208,16 +222,16 @@ section{padding:88px 0;scroll-margin-top:72px}
 .sec-head p{color:var(--ink-2);max-width:52ch;margin-top:12px}
 
 /* MENU */
-.menu-tabs{display:flex;gap:0;flex-wrap:wrap;margin-bottom:40px;border-bottom:2px solid var(--ink)}
+.menu-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
 .menu-tab{
-  border:none;background:none;color:var(--ink-2);cursor:pointer;
-  padding:12px 20px 14px;font-size:.92rem;font-family:inherit;font-weight:600;text-transform:uppercase;letter-spacing:.02em;
-  border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s;
+  border:2px solid var(--ink);background:var(--paper);color:var(--ink-2);cursor:pointer;border-radius:var(--radius);
+  padding:10px 16px;font-size:.86rem;font-family:inherit;font-weight:600;text-transform:uppercase;letter-spacing:.02em;
+  transition:color .15s,background .15s,box-shadow .15s,transform .15s;white-space:nowrap;
 }
-.menu-tab:hover{color:var(--ink)}
-.menu-tab.active{color:var(--red);border-bottom-color:var(--red)}
+.menu-tab:hover{color:var(--ink);background:var(--bg-2)}
+.menu-tab.active{color:var(--gold);background:var(--tafel);box-shadow:3px 3px 0 var(--red);transform:translate(-1px,-1px)}
 .menu-panel-title,.print-brand,.print-contact{display:none}
-.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;background:var(--paper);border:2px solid var(--ink);padding:0 20px}
 .menu-grid[hidden]{display:none}
 .menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:17px 0}
 .menu-item + .menu-item{border-top:1px dashed var(--line)}
@@ -230,17 +244,34 @@ section{padding:88px 0;scroll-margin-top:72px}
 .mi-desc{color:var(--ink-2);font-size:.87rem;margin-top:2px}
 .mi-price{font-family:"Cabinet Grotesk";font-weight:700;color:var(--red);font-size:1.08rem;white-space:nowrap;font-variant-numeric:tabular-nums}
 .menu-note{margin-top:36px;color:var(--ink-2);font-size:.88rem}
-@media(max-width:760px){.menu-grid{grid-template-columns:1fr}.menu-grid > .menu-item:nth-child(2){border-top:1px dashed var(--line)}}
+@media(max-width:760px){
+  .menu-tabs{
+    position:sticky;top:72px;z-index:20;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;
+    margin:0 -18px 26px;padding:12px 18px 15px;background:var(--bg);border-bottom:2px solid var(--ink);
+  }
+  .menu-tabs::-webkit-scrollbar{display:none}
+  .menu-grid{grid-template-columns:1fr;padding:0 16px}
+  .menu-grid > .menu-item:nth-child(2){border-top:1px dashed var(--line)}
+}
 
 /* LOKALER ANKER */
 .local-proof{background:var(--tafel);color:var(--paper);border-bottom:2px solid var(--ink)}
-.local-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:end}
+.local-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center}
 .local-label{color:var(--gold);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
 .local-proof h2{font-size:clamp(2rem,4vw,3.35rem);max-width:17ch;text-wrap:balance}
-.local-copy{color:#d8cbb4;max-width:48ch}
+.local-number{border:1px solid rgba(201,162,75,.5);min-height:280px;display:flex;flex-direction:column;justify-content:center;padding:28px 34px}
+.local-number span{font-family:"Cabinet Grotesk",system-ui,sans-serif;font-size:clamp(6rem,14vw,10.5rem);font-weight:800;line-height:.72;color:var(--gold);letter-spacing:-.06em}
+.local-number small{color:#d8cbb4;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;margin-top:28px}
+.local-copy{color:#d8cbb4;max-width:52ch;margin-top:26px}
 .local-copy p{padding:18px 0;border-top:1px solid rgba(201,162,75,.35)}
 .local-copy p:last-child{border-bottom:1px solid rgba(201,162,75,.35)}
-@media(max-width:760px){.local-grid{grid-template-columns:1fr;gap:36px}}
+.transit-lines{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.transit-lines span{display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:36px;border:1px solid var(--gold);color:var(--gold);font-weight:700;font-size:.82rem}
+@media(max-width:760px){
+  .local-grid{grid-template-columns:1fr;gap:36px}
+  .local-number{min-height:210px}
+  .local-number span{font-size:7.5rem}
+}
 
 /* REVIEWS */
 .reviews{background:var(--bg-2);border-bottom:2px solid var(--ink)}
@@ -287,20 +318,20 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
 .mobile-bar{display:none}
 @media(max-width:860px){
   .mobile-bar{
-    display:flex;gap:10px;position:fixed;bottom:0;left:0;right:0;z-index:60;
+    display:flex;gap:6px;position:fixed;bottom:0;left:0;right:0;z-index:60;
     background:var(--paper);border-top:2px solid var(--ink);
-    padding:10px 16px;
-    padding-bottom:max(12px, env(safe-area-inset-bottom));
-    padding-left:max(16px, env(safe-area-inset-left));
-    padding-right:max(16px, env(safe-area-inset-right));
+    padding:8px 10px;
+    padding-bottom:max(10px, env(safe-area-inset-bottom));
+    padding-left:max(10px, env(safe-area-inset-left));
+    padding-right:max(10px, env(safe-area-inset-right));
   }
   .mobile-bar a{
-    flex:1;text-align:center;padding:14px 10px;border-radius:var(--radius);
-    font-weight:600;text-transform:uppercase;font-size:.9rem;letter-spacing:.03em;
+    flex:1;text-align:center;padding:12px 4px;border-radius:var(--radius);min-height:48px;
+    font-weight:600;text-transform:uppercase;font-size:.78rem;letter-spacing:.025em;
     border:2px solid var(--ink);
   }
-  .mobile-bar .mb-call{background:var(--red);color:var(--paper)}
-  .mobile-bar .mb-route{background:var(--paper);color:var(--ink)}
+  .mobile-bar .mb-menu{background:var(--red);color:var(--paper)}
+  .mobile-bar .mb-call,.mobile-bar .mb-route{background:var(--paper);color:var(--ink)}
   footer.site{padding-bottom:110px}
 }
 
@@ -309,7 +340,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
 @media(min-width:1700px){
   body{font-size:17px}
   .wrap,.nav-inner,.strip-inner{max-width:1400px}
-  .hero-copy{padding-left:calc(max((100vw - 1400px)/2, 24px))}
+  .hero-board-inner,.hero-utility-inner{max-width:1400px}
 }
 /* Laptop 13" */
 @media(max-width:1180px){
@@ -326,14 +357,19 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
   section{padding:64px 0}
   .wrap{padding:0 18px}
   .nav-inner{padding:0 18px}
-  .hero-copy{padding:96px 18px 32px}
-  .hero h1{font-size:clamp(2.1rem,9vw,2.8rem)}
-  .hero-ctas{flex-direction:column}
+  .hero-board{min-height:340px;padding:14px}
+  .hero-board-inner{min-height:312px;padding:16px}
+  .hero-board-top{align-items:flex-start;flex-direction:column;gap:10px}
+  .hero-status{width:100%}
+  .hero-mark{padding:10px 0 12px}
+  .hero-board-foot{align-items:flex-start;flex-direction:column;gap:16px}
+  .hero-lines{justify-content:flex-start;max-width:none}
+  .hero-station{width:100%;margin:3px 0 0;text-align:left}
+  .hero-utility-inner{gap:20px;padding:26px 18px 32px}
+  .hero h1{font-size:clamp(2.25rem,10vw,3rem)}
   .btn-primary,.btn-ghost,.map-cta{text-align:center;width:100%;padding:16px 24px}
   .menu-tabs{gap:8px}
   .menu-tab{padding:10px 16px;font-size:.88rem;min-height:44px}
-  .hero-brand{min-height:320px}
-  .hero-brand-meta{flex-direction:column;gap:4px;text-align:center}
   .rev-score .num{font-size:4.2rem}
   .contact-block a.big{font-size:1.25rem}
   .foot-inner{flex-direction:column;gap:6px}
@@ -345,8 +381,8 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
 }
 /* Phone quer */
 @media(max-height:480px) and (orientation:landscape){
-  .hero{min-height:auto}
-  .hero-copy{padding-top:90px;padding-bottom:32px}
+  .hero-board{min-height:360px}
+  .hero-board-inner{min-height:324px}
 }
 /* iPhone Notch / Safe Areas */
 @supports(padding:max(0px)){
@@ -396,7 +432,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
     nav{position:static!important}
     .burger{display:none!important}
     .mobile-menu{display:block!important;position:static!important}
-    .hero-copy{padding-top:48px!important}
+    .hero{padding-top:0!important}
   }
 </style>
 </noscript>
@@ -428,20 +464,41 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
 
 <main id="main" tabindex="-1">
 <header class="hero">
-  <div class="hero-copy">
-    <p class="hero-status" id="hero-status">Mo bis Sa 10:00 bis 22:30 · So 12:00 bis 22:00</p>
-    <h1>Döneria<br><em>Dornbusch.</em></h1>
-    <p>49 Positionen vom Aushang, mit Preisen und denselben Nummern wie im Laden. Eschersheimer Landstraße 322, direkt an der U-Bahn.</p>
-    <div class="hero-ctas">
-      <a href="#speisekarte" class="btn-primary">Zur Speisekarte</a>
-      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=D%C3%B6neria%20Dornbusch%2C%20Eschersheimer%20Landstra%C3%9Fe%20322%2C%2060320%20Frankfurt%20am%20Main" target="_blank" rel="noopener" class="btn-ghost">Route planen</a>
+  <div class="hero-board">
+    <div class="hero-board-inner">
+      <div class="hero-board-top">
+        <span class="hero-place">Frankfurt · Dornbusch</span>
+        <p class="hero-status" id="hero-status">Mo bis Sa 10:00 bis 22:30 · So 12:00 bis 22:00</p>
+      </div>
+      <div class="hero-mark">
+        <img src="assets/wordmark-plain.svg" width="820" height="250" alt="Einmal essen. Döneria. Nicht vergessen." fetchpriority="high">
+      </div>
+      <div class="hero-board-foot">
+        <div class="hero-board-address">
+          <span>Vor Ort</span>
+          <strong>Eschersheimer Landstraße 322</strong>
+        </div>
+        <div class="hero-lines" role="group" aria-label="U-Bahn-Linien U1, U2, U3 und U8 an der Fritz-Tarnow-Straße">
+          <span>U1</span><span>U2</span><span>U3</span><span>U8</span>
+          <span class="hero-station">Fritz-Tarnow-Straße</span>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="hero-brand">
-    <img src="assets/wordmark-plain.svg" width="820" height="250" alt="Einmal essen. Döneria. Nicht vergessen." fetchpriority="high">
-    <div class="hero-brand-meta" aria-hidden="true">
-      <span>Eschersheimer 322</span>
-      <span>Frankfurt-Dornbusch</span>
+  <div class="hero-utility">
+    <div class="hero-utility-inner">
+      <div class="hero-copy">
+        <p class="hero-kicker">Speisekarte · Frankfurt-Dornbusch</p>
+        <h1><span>49 Positionen.</span><br><em>Bestell nach Nummer.</em></h1>
+        <p>Preise und Nummern wie auf dem zuletzt veröffentlichten Aushang. Änderungen im Laden sind möglich.</p>
+      </div>
+      <div class="hero-actions">
+        <div class="hero-ctas">
+          <a href="#speisekarte" class="btn-primary">Zur Speisekarte</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=D%C3%B6neria%20Dornbusch%2C%20Eschersheimer%20Landstra%C3%9Fe%20322%2C%2060320%20Frankfurt%20am%20Main" target="_blank" rel="noopener" class="btn-ghost">Route planen</a>
+        </div>
+        <p class="hero-action-note">Essen vor Ort · zum Mitnehmen</p>
+      </div>
     </div>
   </div>
 </header>
@@ -556,13 +613,20 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
 
 <section class="local-proof" id="ueber">
   <div class="wrap local-grid">
+    <div class="local-number" aria-hidden="true">
+      <span>322</span>
+      <small>Eschersheimer Landstraße</small>
+    </div>
     <div>
       <p class="local-label">Frankfurt-Dornbusch</p>
       <h2>Aus der U-Bahn fast direkt an die Theke.</h2>
-    </div>
-    <div class="local-copy">
-      <p>Fritz-Tarnow-Straße: U1, U2, U3 und U8 halten praktisch vor der Tür.</p>
-      <p>Drinnen hängt die Frankfurter Skyline an der Wand, draußen gibt es weitere Sitzplätze.</p>
+      <div class="local-copy">
+        <p>Fritz-Tarnow-Straße liegt praktisch vor der Tür.</p>
+        <p>Drinnen hängt die Frankfurter Skyline an der Wand, draußen gibt es weitere Sitzplätze.</p>
+      </div>
+      <div class="transit-lines" role="group" aria-label="U-Bahn-Linien U1, U2, U3 und U8">
+        <span>U1</span><span>U2</span><span>U3</span><span>U8</span>
+      </div>
     </div>
   </div>
 </section>
@@ -626,6 +690,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
 </footer>
 
 <div class="mobile-bar">
+  <a class="mb-menu" href="#speisekarte">Karte</a>
   <a class="mb-call" href="tel:+496996865511">Anrufen</a>
   <a class="mb-route" href="https://www.google.com/maps/dir/?api=1&amp;destination=D%C3%B6neria%20Dornbusch%2C%20Eschersheimer%20Landstra%C3%9Fe%20322%2C%2060320%20Frankfurt%20am%20Main" target="_blank" rel="noopener">Route</a>
 </div>

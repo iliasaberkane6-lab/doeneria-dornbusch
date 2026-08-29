@@ -40,6 +40,11 @@ assert(panels.length === 6, `Erwartet: 6 Menüpanels, gefunden: ${panels.length}
 assert(panels.every((panel) => panel.includes('tabindex="0"')), "Nicht jedes Menüpanel ist fokussierbar");
 assert(index.includes('<main id="main" tabindex="-1">'), "Skip-Link-Ziel ist nicht zuverlässig fokussierbar");
 assert(!index.match(/<div class="mobile-menu"[^>]*aria-hidden/), "No-JS-Mobile-Menü wird initial aus dem Accessibility Tree entfernt");
+assert(index.includes('class="hero-board"') && index.includes('class="hero-mark"'), "Eigenständige Aushang-Bühne im Hero fehlt");
+assert(!index.includes('class="hero-brand"'), "Alter Split-Hero ist wieder vorhanden");
+assert(index.includes('class="local-number"') && index.includes('<span>322</span>'), "Lokaler 322-Anker fehlt");
+assert(count(index, /<a class="mb-(?:menu|call|route)"/g) === 3, "Mobile Schnellleiste hat nicht genau Karte, Anruf und Route");
+assert(index.includes('<a class="mb-menu" href="#speisekarte">Karte</a>'), "Mobiler Direktzugriff auf die Speisekarte fehlt");
 
 // Vollständige Speisekarte und Nummern 01–43.
 assert(count(index, /class="menu-item"/g) === 49, "Speisekarte enthält nicht genau 49 Positionen");
@@ -149,4 +154,4 @@ assert(!/<iframe\b/.test(index), "Eingebetteter Drittanbieter-Inhalt gefunden");
 assert(!/<form\b/.test(index), "Unerwartetes Formular gefunden");
 assert(!/(?:google-analytics|googletagmanager|facebook\.net|hotjar)/i.test(index), "Tracking-Code gefunden");
 
-console.log("Website-Qualität geprüft: 4 Seiten, 49 Positionen, 6 Tabs, No-JS/Druck, Quellen- und Vorschau-Schutz.");
+console.log("Website-Qualität geprüft: 4 Seiten, 49 Positionen, 6 Tabs, 3 mobile Direktaktionen, No-JS/Druck, Quellen- und Vorschau-Schutz.");
