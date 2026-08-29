@@ -20,18 +20,18 @@ Demo zeigen: https://iliasaberkane6-lab.github.io/doeneria-dornbusch/
 
 ---
 
-## B. INHALTE PRÜFEN — die Seite behauptet das, es muss stimmen
+## B. INHALTE PRÜFEN — vor dem offiziellen Livegang bestätigen
 
 - [ ] **Preise und Nummern gegenprüfen.** Auf der Seite stehen alle 49 Positionen mit den
       Tafel-Nummern 01–43. Die stammen von Tafel-Fotos, die 6–12 Monate alt sind.
       Am besten einmal mit der aktuellen Tafel durchgehen. Auch: Stimmt die Zuordnung
       Nummer zu Gericht noch?
 - [ ] **Öffnungszeiten:** Mo–Sa 10:00–22:30, So 12:00–22:00 — noch aktuell?
-- [ ] **„Alles halal"** — stimmt das so pauschal?
+- [ ] **„Alles halal"** — stimmt das so pauschal? Erst nach Bestätigung als Aussage aufnehmen.
 - [ ] **Keine Lieferung?** Google zeigt nur „vor Ort" und „zum Mitnehmen". Wenn er doch
       liefert (Lieferando/Wolt), gehört ein Bestell-Button auf die Seite.
 - [ ] **Slogan:** „Einmal essen … Döneria … nicht vergessen" — so wie auf der Tafel?
-- [ ] Sitzplätze drinnen/draußen und rollstuhlgerechter Zugang — stimmt beides?
+- [ ] Sitzplätze drinnen/draußen bestätigen; rollstuhlgerechten Zugang nur nach Bestätigung nennen.
 
 ---
 
@@ -54,7 +54,7 @@ Demo zeigen: https://iliasaberkane6-lab.github.io/doeneria-dornbusch/
 - [ ] Instagram- oder Facebook-Seite vorhanden? (dann verlinken)
 - [ ] Gibt es eine Auszeichnung/Presse, mit der man werben kann?
 - [ ] 2–3 Google-Rezensionen aussuchen, die er zitiert haben möchte
-      (aktuell stehen 3 echte Zitate drauf, ohne Namensnennung)
+      (aktuell stehen 2 kurze, benannte und verlinkte Auszüge auf der Seite)
 
 ---
 
@@ -63,12 +63,13 @@ Demo zeigen: https://iliasaberkane6-lab.github.io/doeneria-dornbusch/
 1. Domain registrieren (10–15 €/Jahr), am besten auf **seinen** Namen
 2. Impressum + Datenschutz mit den echten Daten füllen (Platzhalter sind vorbereitet)
 3. Preise korrigieren, echte Fotos einbauen
-4. Seite auf die Domain umziehen, robots.txt + sitemap.xml anlegen, Canonical setzen
+4. Seite auf die Domain umziehen, Vorschau-`noindex` entfernen, robots.txt + sitemap.xml
+   anlegen und Canonical auf die offizielle Domain umstellen
 5. Abnahme gemeinsam am Handy, dann Rechnung
 
 ---
 
 ## Ehrlich ansprechen (schafft Vertrauen)
 
-- Die Food-Fotos sind aktuell KI-generierte Platzhalter → Angebot, sie durch echte zu ersetzen
+- Die sichtbare Website verwendet bewusst keine KI-Foodbilder → echte Fotos erst mit Einverständnis aufnehmen
 - Die Preise stammen von alten Tafel-Fotos → deshalb der gemeinsame Abgleich
