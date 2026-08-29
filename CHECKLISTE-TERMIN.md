@@ -63,13 +63,18 @@ Demo zeigen: https://iliasaberkane6-lab.github.io/doeneria-dornbusch/
 1. Domain registrieren (10–15 €/Jahr), am besten auf **seinen** Namen
 2. Impressum + Datenschutz mit den echten Daten füllen (Platzhalter sind vorbereitet)
 3. Preise korrigieren, echte Fotos einbauen
-4. Seite auf die Domain umziehen, Vorschau-`noindex` entfernen, robots.txt + sitemap.xml
-   anlegen und Canonical auf die offizielle Domain umstellen
+4. Seite auf die Domain umziehen. Erst nach Freigabe und vollständigen Pflichtangaben:
+   Vorschau-`noindex` entfernen, robots.txt + sitemap.xml anlegen und alle absoluten
+   Vorschau-URLs auf die offizielle Domain umstellen (Canonical, Open Graph, JSON-LD
+   und die Pfade in `404.html`). Danach nach `github.io` und `/doeneria-dornbusch/`
+   suchen; im ausgelieferten Stand darf davon nichts übrig sein.
 5. Abnahme gemeinsam am Handy, dann Rechnung
 
 ---
 
 ## Ehrlich ansprechen (schafft Vertrauen)
 
-- Die sichtbare Website verwendet bewusst keine KI-Foodbilder → echte Fotos erst mit Einverständnis aufnehmen
+- Die öffentliche Website liefert bewusst keine KI-Foodbilder aus; frühere Platzhalter
+  liegen nur noch im nicht veröffentlichten Projektarchiv → echte Fotos erst mit
+  Einverständnis aufnehmen
 - Die Preise stammen von alten Tafel-Fotos → deshalb der gemeinsame Abgleich

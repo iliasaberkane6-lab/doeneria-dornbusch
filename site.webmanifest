@@ -1,12 +1,16 @@
 {
   "name": "Döneria Dornbusch",
   "short_name": "Döneria",
-  "start_url": ".",
+  "description": "Speisekarte, Öffnungszeiten und Route zur Döneria Dornbusch in Frankfurt am Main.",
+  "lang": "de",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#f7ecd9",
   "theme_color": "#f7ecd9",
   "icons": [
-    {"src": "assets/favicon-32.png", "sizes": "32x32", "type": "image/png"},
-    {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png"}
+    {"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
   ]
 }

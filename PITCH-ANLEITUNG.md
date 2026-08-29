@@ -31,9 +31,9 @@ und ein Knopf zum Anrufen. Funktioniert auf jedem Handy."
 3. "Die Seite ist so gebaut, dass Google sie besser findet als Konkurrenz ohne Website."
 
 ### 5. Ehrlichkeit (WICHTIG, baut Vertrauen auf)
-"Zwei Dinge muss ich sagen: Ich habe bewusst keine künstlichen Food-Fotos
-gezeigt. Wenn Sie möchten, machen wir echte Fotos von Ihrem Essen und Ihrem
-Laden. Und die Preise habe ich von Ihrer veröffentlichten Tafel abgelesen,
+"Zwei Dinge muss ich sagen: Die Website liefert bewusst keine künstlichen
+Food-Fotos aus. Wenn Sie möchten, machen wir echte Fotos von Ihrem Essen und
+Ihrem Laden. Und die Preise habe ich von Ihrer veröffentlichten Tafel abgelesen,
 die sollten wir einmal kurz zusammen durchgehen."
 
 ### 6. Preis (erst nennen, wenn ER nach dem Preis fragt)

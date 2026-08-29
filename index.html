@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <!-- Vorschau bis zur Freigabe durch den Inhaber; beim offiziellen Livegang entfernen. -->
 <meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
 <title>Döneria Dornbusch · Speisekarte &amp; Öffnungszeiten</title>
 <meta name="description" content="Döneria Dornbusch in Frankfurt: Speisekarte für Döner, Dürüm, Falafel, Pizza und mehr – mit Preisen, Öffnungszeiten, Anruf und Route.">
 <meta name="theme-color" content="#f7ecd9">
@@ -12,14 +13,18 @@
 <meta property="og:title" content="Döneria Dornbusch · Frankfurt">
 <meta property="og:description" content="Döner, Dürüm, Falafel, Pizza und mehr – mit Preisen, Öffnungszeiten und Route zur Eschersheimer Landstraße 322.">
 <meta property="og:image" content="https://iliasaberkane6-lab.github.io/doeneria-dornbusch/assets/og-image.png">
+<meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Goldene Döneria-Wortmarke auf schwarzem Grund">
 <meta property="og:url" content="https://iliasaberkane6-lab.github.io/doeneria-dornbusch/">
 <meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Döneria Dornbusch">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Döneria Dornbusch · Frankfurt">
 <meta name="twitter:description" content="Döner, Dürüm, Falafel, Pizza und mehr – mit Preisen, Öffnungszeiten und Route zur Eschersheimer Landstraße 322.">
 <meta name="twitter:image" content="https://iliasaberkane6-lab.github.io/doeneria-dornbusch/assets/og-image.png">
+<meta name="twitter:image:alt" content="Goldene Döneria-Wortmarke auf schwarzem Grund">
 <link rel="canonical" href="https://iliasaberkane6-lab.github.io/doeneria-dornbusch/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
@@ -129,6 +134,7 @@ nav{
 .mobile-menu.open{display:block}
 .mobile-menu a{display:block;padding:16px 0;font-size:1.1rem;font-weight:600;border-bottom:1px solid var(--line);text-transform:uppercase;letter-spacing:.02em}
 .mobile-menu a:last-child{border-bottom:none}
+.mobile-menu .mobile-phone-link{color:var(--red);font-weight:600}
 @media(max-width:860px){
   .nav-links{display:none}
   .burger{display:flex;align-items:center;justify-content:center}
@@ -187,6 +193,7 @@ nav{
 .strip-cell:first-child{border-left:none}
 .strip-cell b{display:block;font-size:1.02rem;font-weight:600;margin-bottom:2px;text-transform:uppercase;letter-spacing:.01em}
 .strip-cell span{color:var(--ink-2);font-size:.88rem}
+.text-link{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em}
 .open-now{color:var(--red)}
 @media(max-width:700px){
   .strip-inner{grid-template-columns:1fr}
@@ -253,6 +260,8 @@ section{padding:88px 0;scroll-margin-top:72px}
 
 /* KONTAKT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.contact-title{font-size:clamp(2rem,3.6vw,3rem);font-weight:800}
+.hours-title{font-size:1.3rem}
 .hours-table{width:100%;border-collapse:collapse;margin-top:20px}
 .hours-table td{padding:12px 0;border-bottom:1px dashed var(--line);color:var(--ink-2)}
 .hours-table td:last-child{text-align:right;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
@@ -263,12 +272,15 @@ section{padding:88px 0;scroll-margin-top:72px}
 }
 .contact-block a.big:hover{color:var(--red)}
 .contact-block .label{color:var(--ink-2);font-size:.85rem;margin-top:20px;text-transform:uppercase;letter-spacing:.03em}
+.location-note{color:var(--ink-2);font-size:.9rem;margin-top:20px}
 .map-cta{margin-top:28px;display:inline-block}
 @media(max-width:760px){.contact-grid{grid-template-columns:1fr;gap:40px}}
 
 /* FOOTER */
 footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);font-size:.85rem;background:var(--bg-2)}
 .foot-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer-slogan{font-style:italic}
+.footer-links a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em}
 
 /* MOBILE STICKY BAR */
 .mobile-bar{display:none}
@@ -375,7 +387,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
   <a href="#ueber">Vor Ort</a>
   <a href="#bewertungen">Bewertungen</a>
   <a href="#kontakt">Kontakt</a>
-  <a href="tel:+496996865511" style="color:var(--red);font-weight:600">Anrufen: 069 96865511</a>
+  <a href="tel:+496996865511" class="mobile-phone-link">Anrufen: 069 96865511</a>
 </div>
 
 <main id="main">
@@ -386,11 +398,11 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
     <p>49 Positionen vom Aushang, mit Preisen und denselben Nummern wie im Laden. Eschersheimer Landstraße 322, direkt an der U-Bahn.</p>
     <div class="hero-ctas">
       <a href="#speisekarte" class="btn-primary">Zur Speisekarte</a>
-      <a href="https://maps.google.com/?q=Döneria+Dornbusch,+Eschersheimer+Landstraße+322,+60320+Frankfurt" target="_blank" rel="noopener" class="btn-ghost">Route planen</a>
+      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=D%C3%B6neria%20Dornbusch%2C%20Eschersheimer%20Landstra%C3%9Fe%20322%2C%2060320%20Frankfurt%20am%20Main" target="_blank" rel="noopener" class="btn-ghost">Route planen</a>
     </div>
   </div>
   <div class="hero-brand">
-    <img src="assets/wordmark-plain.svg" width="820" height="250" alt="Einmal essen. Döneria. Nicht vergessen.">
+    <img src="assets/wordmark-plain.svg" width="820" height="250" alt="Einmal essen. Döneria. Nicht vergessen." fetchpriority="high">
     <div class="hero-brand-meta" aria-hidden="true">
       <span>Eschersheimer 322</span>
       <span>Frankfurt-Dornbusch</span>
@@ -406,7 +418,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
     </div>
     <div class="strip-cell">
       <b>4,6 von 5 Sternen</b>
-      <span><a href="https://maps.google.com/?q=Döneria+Dornbusch,+Eschersheimer+Landstraße+322,+60320+Frankfurt" target="_blank" rel="noopener" style="text-decoration:underline">230 Google-Bewertungen</a></span>
+      <span><a href="https://www.google.com/maps/search/?api=1&amp;query=D%C3%B6neria%20Dornbusch%2C%20Eschersheimer%20Landstra%C3%9Fe%20322%2C%2060320%20Frankfurt%20am%20Main" target="_blank" rel="noopener" class="text-link">230 Google-Bewertungen</a></span>
     </div>
     <div class="strip-cell">
       <b>Direkt an der U-Bahn</b>
@@ -429,7 +441,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
       <button class="menu-tab" id="tab-snacks" data-cat="snacks" role="tab" aria-selected="false" aria-controls="panel-snacks" tabindex="-1">Schnitzel &amp; Snacks</button>
       <button class="menu-tab" id="tab-salate" data-cat="salate" role="tab" aria-selected="false" aria-controls="panel-salate" tabindex="-1">Salate, Suppe &amp; Getränke</button>
     </div>
-    <div class="menu-grid" id="panel-doener" role="tabpanel" aria-labelledby="tab-doener" data-cat="doener">
+    <div class="menu-grid" id="panel-doener" role="tabpanel" aria-labelledby="tab-doener" data-cat="doener" tabindex="0">
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">01.</span>Drehspieß Sandwich (Döner)</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">7,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">02.</span>Drehspieß Menü (Döner)</div><div class="mi-desc">Mit Pommes und 1 Softgetränk 0,33 l</div></div><div class="mi-price">11,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">03.</span>Drehspieß Sandwich (Döner)</div><div class="mi-desc">Mit Fleisch, Pommes und Soße</div></div><div class="mi-price">7,50 €</div></div>
@@ -442,7 +454,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num" aria-hidden="true"></span>Extra Drehspießfleisch (Döner)</div></div><div class="mi-price">1,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num" aria-hidden="true"></span>Extra Weichkäse</div></div><div class="mi-price">0,80 €</div></div>
     </div>
-    <div class="menu-grid" id="panel-lahmacun" role="tabpanel" aria-labelledby="tab-lahmacun" data-cat="lahmacun" hidden>
+    <div class="menu-grid" id="panel-lahmacun" role="tabpanel" aria-labelledby="tab-lahmacun" data-cat="lahmacun" tabindex="0" hidden>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">11.</span>Lahmacun</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">5,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">12.</span>Lahmacun</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">13.</span>Lahmacun</div><div class="mi-desc">Mit Fleisch, Salat und Soße</div></div><div class="mi-price">8,30 €</div></div>
@@ -452,7 +464,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">17.</span>Pide Sucuk</div><div class="mi-desc">Mit türkischer Knoblauchwurst</div></div><div class="mi-price">8,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">18.</span>Pide mit Fleisch</div><div class="mi-desc">Mit Fleisch</div></div><div class="mi-price">9,00 €</div></div>
     </div>
-    <div class="menu-grid" id="panel-pizza" role="tabpanel" aria-labelledby="tab-pizza" data-cat="pizza" hidden>
+    <div class="menu-grid" id="panel-pizza" role="tabpanel" aria-labelledby="tab-pizza" data-cat="pizza" tabindex="0" hidden>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">19.</span>Pizza Margherita</div><div class="mi-desc">Mit Tomatensoße und Käse</div></div><div class="mi-price">7,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">20.</span>Pizza Salami</div><div class="mi-desc">Mit Rindersalami</div></div><div class="mi-price">8,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">21.</span>Pizza Sucuk</div><div class="mi-desc">Mit türkischer Knoblauchwurst</div></div><div class="mi-price">9,00 €</div></div>
@@ -460,7 +472,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">23.</span>Pizza mit Fleisch</div><div class="mi-desc">Mit Fleisch und Soße</div></div><div class="mi-price">10,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">24.</span>Pizza Thunfisch</div><div class="mi-desc">Mit Thunfisch und Zwiebeln</div></div><div class="mi-price">10,00 €</div></div>
     </div>
-    <div class="menu-grid" id="panel-veggie" role="tabpanel" aria-labelledby="tab-veggie" data-cat="veggie" hidden>
+    <div class="menu-grid" id="panel-veggie" role="tabpanel" aria-labelledby="tab-veggie" data-cat="veggie" tabindex="0" hidden>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">28.</span>Veggie Sandwich</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">29.</span>Veggie Dürüm</div><div class="mi-desc">Mit Weichkäse, Salat und Soße</div></div><div class="mi-price">6,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">30.</span>Vegetarischer Teller</div></div><div class="mi-price">9,00 €</div></div>
@@ -469,7 +481,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">33.</span>Falafel Dürüm</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,50 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">34.</span>Falafel Teller</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">9,00 €</div></div>
     </div>
-    <div class="menu-grid" id="panel-snacks" role="tabpanel" aria-labelledby="tab-snacks" data-cat="snacks" hidden>
+    <div class="menu-grid" id="panel-snacks" role="tabpanel" aria-labelledby="tab-snacks" data-cat="snacks" tabindex="0" hidden>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">25.</span>Hähnchenschnitzel Sandwich</div><div class="mi-desc">Mit Salat und Soße</div></div><div class="mi-price">6,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">26.</span>Hähnchenschnitzel</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">9,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">27.</span>Chicken Nuggets</div><div class="mi-desc">Mit Pommes oder Reis, Salat und Soße</div></div><div class="mi-price">8,50 €</div></div>
@@ -480,7 +492,7 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">39.</span>Rindswurst</div><div class="mi-desc">Frankfurter Klassiker, im Brot 4,70 € / mit Pommes 8,50 €</div></div><div class="mi-price">ab 4,70 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num" aria-hidden="true"></span>Tagesmenü</div><div class="mi-desc">Mit Reis und Salat</div></div><div class="mi-price">10,00 €</div></div>
     </div>
-    <div class="menu-grid" id="panel-salate" role="tabpanel" aria-labelledby="tab-salate" data-cat="salate" hidden>
+    <div class="menu-grid" id="panel-salate" role="tabpanel" aria-labelledby="tab-salate" data-cat="salate" tabindex="0" hidden>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">10.</span>Linsensuppe</div><div class="mi-desc">Mercimek Çorbası</div></div><div class="mi-price">6,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">40.</span>Gemischter Salat</div><div class="mi-desc">Mit Weichkäse</div></div><div class="mi-price">7,00 €</div></div>
       <div class="menu-item"><div><div class="mi-name"><span class="mi-num">41.</span>Thunfisch Salat</div><div class="mi-desc">Salat mit Thunfisch</div></div><div class="mi-price">8,00 €</div></div>
@@ -514,16 +526,16 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
       <div class="rev-score">
         <div class="num">4,6</div>
         <div class="stars" role="img" aria-label="4,6 von 5 Sternen">★★★★★</div>
-        <span><a href="https://maps.google.com/?q=Döneria+Dornbusch,+Eschersheimer+Landstraße+322,+60320+Frankfurt" target="_blank" rel="noopener" style="text-decoration:underline">aus 230 Google-Bewertungen</a></span>
+        <span><a href="https://www.google.com/maps/search/?api=1&amp;query=D%C3%B6neria%20Dornbusch%2C%20Eschersheimer%20Landstra%C3%9Fe%20322%2C%2060320%20Frankfurt%20am%20Main" target="_blank" rel="noopener" class="text-link">aus 230 Google-Bewertungen</a></span>
       </div>
       <div class="rev-quotes">
         <blockquote>
-          <p>„Kleiner Dönerladen ohne großen Schnick-Schnack. Döner einfach gut und lecker.“</p>
-          <footer><a href="https://de.restaurantguru.com/Doneria-Dornbusch-Frankfurt" target="_blank" rel="noopener">BjoeNe77 · Google-Rezension</a></footer>
+          <p>„Kleiner Dönerladen ohne großen Schnick-Schnack. Döner (Drehspieß Sandwich) einfach gut und lecker.“</p>
+          <footer><a href="https://de.restaurantguru.com/Doneria-Dornbusch-Frankfurt" target="_blank" rel="noopener">BjoeNe77 · Google-Rezension via Restaurant Guru</a></footer>
         </blockquote>
         <blockquote>
-          <p>„Der Besitzer ist super nett und macht die Bestellung immer zügig fertig.“</p>
-          <footer><a href="https://de.restaurantguru.com/Doneria-Dornbusch-Frankfurt" target="_blank" rel="noopener">Katharina Zimmermann · Google-Rezension</a></footer>
+          <p>„Der Besitzer ist übrigens super nett und macht die Bestellung immer zügig fertig!“</p>
+          <footer><a href="https://de.restaurantguru.com/Doneria-Dornbusch-Frankfurt" target="_blank" rel="noopener">Katharina Zimmermann · Google-Rezension via Restaurant Guru</a></footer>
         </blockquote>
       </div>
     </div>
@@ -534,23 +546,23 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
   <div class="wrap">
     <div class="contact-grid">
       <div>
-        <h2 class="display" style="font-size:clamp(2rem,3.6vw,3rem);font-weight:800">Döneria finden</h2>
+        <h2 class="display contact-title">Döneria finden</h2>
         <div class="contact-block">
           <p class="label">Adresse</p>
-          <a class="big" href="https://maps.google.com/?q=Döneria+Dornbusch,+Eschersheimer+Landstraße+322,+60320+Frankfurt" target="_blank" rel="noopener">Eschersheimer Landstraße 322<br>60320 Frankfurt am Main</a>
+          <a class="big" href="https://www.google.com/maps/search/?api=1&amp;query=D%C3%B6neria%20Dornbusch%2C%20Eschersheimer%20Landstra%C3%9Fe%20322%2C%2060320%20Frankfurt%20am%20Main" target="_blank" rel="noopener">Eschersheimer Landstraße 322<br>60320 Frankfurt am Main</a>
           <p class="label">Telefon</p>
           <a class="big" href="tel:+496996865511">069 96865511</a>
         </div>
-        <a href="https://maps.google.com/?q=Döneria+Dornbusch,+Eschersheimer+Landstraße+322,+60320+Frankfurt" target="_blank" rel="noopener" class="btn-primary map-cta">In Google Maps öffnen</a>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=D%C3%B6neria%20Dornbusch%2C%20Eschersheimer%20Landstra%C3%9Fe%20322%2C%2060320%20Frankfurt%20am%20Main" target="_blank" rel="noopener" class="btn-primary map-cta">Route in Google Maps</a>
       </div>
       <div>
-        <h3 style="font-size:1.3rem">Öffnungszeiten</h3>
+        <h3 class="hours-title">Öffnungszeiten</h3>
         <table class="hours-table">
           <tr><td>Montag bis Freitag</td><td>10:00 bis 22:30</td></tr>
           <tr><td>Samstag</td><td>10:00 bis 22:30</td></tr>
           <tr><td>Sonntag</td><td>12:00 bis 22:00</td></tr>
         </table>
-        <p style="color:var(--ink-2);font-size:.9rem;margin-top:20px">U-Bahn Fritz-Tarnow-Straße (U1, U2, U3, U8) direkt vor der Tür, Station Dornbusch nur wenige Minuten entfernt. Essen vor Ort und zum Mitnehmen.</p>
+        <p class="location-note">U-Bahn Fritz-Tarnow-Straße (U1, U2, U3, U8) direkt vor der Tür, Station Dornbusch nur wenige Minuten entfernt. Essen vor Ort und zum Mitnehmen.</p>
       </div>
     </div>
   </div>
@@ -560,14 +572,14 @@ footer.site{border-top:2px solid var(--ink);padding:28px 0;color:var(--ink-2);fo
 <footer class="site">
   <div class="wrap foot-inner">
     <span>© 2026 Döneria Dornbusch, Frankfurt am Main</span>
-    <span style="font-style:italic">Einmal essen … nicht vergessen</span>
-    <span><a href="impressum.html" style="color:inherit;text-decoration:underline">Impressum</a> · <a href="datenschutz.html" style="color:inherit;text-decoration:underline">Datenschutz</a></span>
+    <span class="footer-slogan">Einmal essen … nicht vergessen</span>
+    <span class="footer-links"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
   </div>
 </footer>
 
 <div class="mobile-bar">
   <a class="mb-call" href="tel:+496996865511">Anrufen</a>
-  <a class="mb-route" href="https://maps.google.com/?q=Döneria+Dornbusch,+Eschersheimer+Landstraße+322,+60320+Frankfurt" target="_blank" rel="noopener">Route</a>
+  <a class="mb-route" href="https://www.google.com/maps/dir/?api=1&amp;destination=D%C3%B6neria%20Dornbusch%2C%20Eschersheimer%20Landstra%C3%9Fe%20322%2C%2060320%20Frankfurt%20am%20Main" target="_blank" rel="noopener">Route</a>
 </div>
 
 <script>
@@ -610,39 +622,43 @@ menuTabs.forEach((btn,index)=>{
 (function(){
   const strip = document.getElementById("open-status");
   const hero = document.getElementById("hero-status");
-  const parts = Object.fromEntries(new Intl.DateTimeFormat("en-GB", {
-    timeZone: "Europe/Berlin",
-    weekday: "short",
-    hour: "2-digit",
-    minute: "2-digit",
-    hourCycle: "h23"
-  }).formatToParts(new Date()).filter(part=>part.type !== "literal").map(part=>[part.type, part.value]));
-  const day = {Sun:0, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6}[parts.weekday];
-  const sunday = day === 0;
-  const mins = Number(parts.hour)*60 + Number(parts.minute);
-  const openMin = sunday ? 720 : 600;
-  const closeMin = sunday ? 1320 : 1350;
-  const openTxt = sunday ? "12:00" : "10:00";
-  const closeTxt = sunday ? "22:00" : "22:30";
-  const isOpen = mins >= openMin && mins < closeMin;
-  let nextOpen;
-  if(mins < openMin) nextOpen = "heute um " + openTxt;
-  else if(day === 6) nextOpen = "Sonntag um 12:00";
-  else if(day === 0) nextOpen = "Montag um 10:00";
-  else nextOpen = "morgen um 10:00";
-  const label = isOpen
-    ? "Jetzt geöffnet · bis " + closeTxt
-    : "Geschlossen · öffnet " + nextOpen;
-  strip.textContent = label;
-  strip.classList.toggle("open-now", isOpen);
-  hero.textContent = "";
-  if(isOpen){
-    const dot = document.createElement("span");
-    dot.className = "dot-open";
-    dot.textContent = "●";
-    hero.append(dot, " " + label);
-  } else {
-    hero.textContent = label;
+  try {
+    const parts = Object.fromEntries(new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/Berlin",
+      weekday: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+      hourCycle: "h23"
+    }).formatToParts(new Date()).filter(part=>part.type !== "literal").map(part=>[part.type, part.value]));
+    const day = {Sun:0, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6}[parts.weekday];
+    const sunday = day === 0;
+    const mins = Number(parts.hour)*60 + Number(parts.minute);
+    const openMin = sunday ? 720 : 600;
+    const closeMin = sunday ? 1320 : 1350;
+    const openTxt = sunday ? "12:00" : "10:00";
+    const closeTxt = sunday ? "22:00" : "22:30";
+    const isOpen = mins >= openMin && mins < closeMin;
+    let nextOpen;
+    if(mins < openMin) nextOpen = "heute um " + openTxt;
+    else if(day === 6) nextOpen = "Sonntag um 12:00";
+    else if(day === 0) nextOpen = "Montag um 10:00";
+    else nextOpen = "morgen um 10:00";
+    const label = isOpen
+      ? "Jetzt geöffnet · bis " + closeTxt
+      : "Geschlossen · öffnet " + nextOpen;
+    strip.textContent = label;
+    strip.classList.toggle("open-now", isOpen);
+    hero.textContent = "";
+    if(isOpen){
+      const dot = document.createElement("span");
+      dot.className = "dot-open";
+      dot.textContent = "●";
+      hero.append(dot, " " + label);
+    } else {
+      hero.textContent = label;
+    }
+  } catch {
+    // Der neutrale Öffnungszeiten-Text bleibt stehen; andere Interaktionen laufen weiter.
   }
 })();
 
